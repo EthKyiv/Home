@@ -69,7 +69,7 @@ definePageMeta({
           </Card>
           <div class="relative">
             <BrandPortrait
-              class="absolute hidden md:block top-0 right-0 transform -translate-y-59 translate-x-10 z-0"
+              class="absolute hidden lg:block top-0 right-0 transform -translate-y-59 translate-x-10 z-0"
             />
             <Card class="mb-4 drop-shadow-dec z-10">
               <CardContent>
