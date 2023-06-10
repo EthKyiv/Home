@@ -16,7 +16,6 @@
         >
           <LanguageSwitcher />
           <ThemeSwitcher />
-
         </div>
       </div>
     </template>

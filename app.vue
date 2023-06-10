@@ -34,6 +34,10 @@ useHead({
       property: 'og:image',
       content: '/assets/social-card.png',
     },
+    {
+      name: 'theme-color',
+      content: '#00b4e3',
+    },
   ],
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -66,6 +70,7 @@ useHead({
 
 <template>
   <Html :class="`${theme === 'dark' ? 'dark' : ''}`" lang="en">
+    <VitePwaManifest />
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-slate-400 bg-white dark:bg-slate-900 overscroll-y-none"
     >
