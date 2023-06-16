@@ -72,7 +72,7 @@ const menus = computed((): IMenuItem[] => [
           class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
         >
           <!-- <LanguageSwitcher /> -->
-          <ThemeSwitcher />
+          <!-- <ThemeSwitcher /> -->
           <Anchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 text-lg flex self-center items-center"
             v-bind="app.links.linktree"
@@ -127,9 +127,9 @@ const menus = computed((): IMenuItem[] => [
           <div class="mt-6 text-sm font-bold capitalize">
             {{ $t('components.theme_switcher.change_theme') }}
           </div>
-          <div class="mt-2">
+          <!-- <div class="mt-2">
             <ThemeSwitcher type="select-box" />
-          </div>
+          </div> -->
           <!-- <div class="mt-6 text-sm font-bold capitalize">
             {{ $t('components.language_switcher.change_language') }}
           </div>

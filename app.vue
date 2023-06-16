@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
 import { AppSetup } from './utils/app'
-import { ITheme } from './utils/theme'
+import { useTheme } from './stores/theme'
+const theme = useTheme()
+
+// import { ITheme } from './utils/theme'
 AppSetup()
-const theme = useState<ITheme>('theme.current')
-const locale = useState<string>('locale.setting')
+
+// const theme = useState<ITheme>('theme.current')
+// const locale = useState<string>('locale.setting')
+
 const app = useAppConfig() as AppConfigInput
 
 useHead({
@@ -69,7 +74,7 @@ useHead({
 </script>
 
 <template>
-  <Html :class="`${theme === 'dark' ? 'dark' : ''}`" lang="en">
+  <Html :class="`${theme.current === 'dark' ? 'dark' : ''}`" lang="en">
     <VitePwaManifest />
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-slate-400 bg-white dark:bg-slate-900 overscroll-y-none"
