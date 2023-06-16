@@ -4,11 +4,23 @@ import { ModuleOptions as NuxtWindiCssModuleOptions } from 'nuxt-windicss'
 import { ModuleOptions as NuxtContentModuleOptions } from '@nuxt/content'
 
 declare module '@nuxt/schema' {
+  interface AppConfigLink {
+    href: string,
+    title: string
+  }
   interface AppConfigInput {
     name: string
     author: {
       name: string
       link: string
+    },
+    links: {
+      twitter: AppConfigLink,
+      linktree: AppConfigLink,
+      discord: AppConfigLink,
+      discord_support: AppConfigLink,
+      hacker_manual: AppConfigLink,
+      sponsor_manual: AppConfigLink,
     }
   }
 }

@@ -75,16 +75,14 @@ const menus = computed((): IMenuItem[] => [
           <ThemeSwitcher />
           <Anchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 text-lg flex self-center items-center"
-            href="https://t.me/eth_kyiv"
-            title="Linktree"
+            v-bind="app.links.linktree"
             target="_blank"
           >
             <IconMdi:link-box-variant />
           </Anchor>
           <Anchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 text-lg flex self-center items-center"
-            href="https://twitter.com/ETHKyiv"
-            title="Twitter"
+            v-bind="app.links.twitter"
             target="_blank"
           >
             <IconMdi:twitter-box />
