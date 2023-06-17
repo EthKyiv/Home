@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div
-    class="card duration-300 transition-colors w-full relative rounded overflow-hidden bg-white/[0.88] dark:bg-slate-950/[0.88] border-2 border-gray-800 dark:border-slate-300/[0.5]"
+    class="card duration-300 transition-colors w-full flex relative rounded overflow-hidden bg-white dark:bg-slate-950/[0.88] border-2 border-gray-800 dark:border-slate-300/[0.5]"
   >
     <div
       v-if="disabled"

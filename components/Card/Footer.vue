@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="card-footer px-6 py-2 text-sm bg-white dark:bg-slate-800 border-t border-gray-900/10 dark:border-gray-50/[0.2]"
-  >
+  <div class="card-footer px-6 pt-6 text-sm mt-auto">
     <slot />
   </div>
 </template>
