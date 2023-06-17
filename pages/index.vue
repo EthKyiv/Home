@@ -8,7 +8,7 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageBody>
-      <kinesis-container event="scroll">
+      <kinesis-container event="move">
         <PageSection
           id="home"
           class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
@@ -130,7 +130,7 @@ definePageMeta({
         class="flex-1 flex flex-col items-start justify-center mt-10 py-5"
       >
         <h2
-          class="text-gray-800 dark:text-slate-300 font-bold uppercase text-3xl"
+          class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl"
         >
           DAY ZERO
         </h2>
@@ -142,36 +142,17 @@ definePageMeta({
           </div>
         </div>
       </PageSection>
-      <PageSection
-        id="tickets"
-        class="flex-1 flex flex-col items-start justify-center mt-10"
-      >
-        <h2
-          class="text-gray-800 dark:text-slate-300 font-bold uppercase text-3xl"
-        >
-          Tickets
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4">
-          <Tickets title="hacker" price="Free" color="bg-green-400"></Tickets>
-          <Tickets title="online" price="$50,-" color="bg-blue-500"></Tickets>
-          <Tickets
-            featured
-            title="general"
-            price="$99,-"
-            color="bg-yellow-500"
-          ></Tickets>
-        </div>
-      </PageSection>
+      <PageSectionTickets></PageSectionTickets>
       <PageSection
         id="sponsors"
         class="flex-1 flex flex-col items-start justify-center mt-10"
       >
         <h2
-          class="text-gray-800 dark:text-slate-300 font-bold uppercase text-3xl"
+          class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl"
         >
           Sponsors
         </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-4 mt-4">
           <Card class="mb-4">
             <CardContent>
               <div class="uppercase font-bold">
@@ -237,6 +218,7 @@ definePageMeta({
           </Card>
         </div>
       </PageSection>
+      <PageSectionFAQ></PageSectionFAQ>
     </PageBody>
   </PageWrapper>
 </template>
