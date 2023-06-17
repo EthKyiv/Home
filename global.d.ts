@@ -17,8 +17,13 @@ declare module '@nuxt/schema' {
     links: {
       twitter: AppConfigLink,
       linktree: AppConfigLink,
+      youtube: AppConfigLink,
+      instagram: AppConfigInput,
+      medium: AppConfigInput
       discord: AppConfigLink,
       discord_support: AppConfigLink,
+      tickets: AppConfigLink,
+      application_hacker: AppConfigLink,
       hacker_manual: AppConfigLink,
       sponsor_manual: AppConfigLink,
     }

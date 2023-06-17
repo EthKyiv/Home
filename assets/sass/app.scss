@@ -68,5 +68,28 @@ html.dark {
 
 .bg-ugradient {
   background: linear-gradient(90deg, #43D7AD 0.93%, #4AC1FF 25.51%, #FADD4F 75.14%, #FFD039 89.06%);
+  background: -webkit-linear-gradient(90eg, #43D7AD 0.93%, #4AC1FF 25.51%, #FADD4F 75.14%, #FFD039 89.06%);
 }
+
+.text-gradient {
+    background-color: #4AC1FF;
+    background-image: linear-gradient(120deg, #43D7AD 0.93%, #4AC1FF 25.51%, #FADD4F 75.14%, #FFD039 89.06%);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+.text-bg-clip {
+  background-color: #4AC1FF;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.h-inherit {
+  height: inherit;
+}
+
 
