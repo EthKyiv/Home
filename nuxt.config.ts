@@ -4,7 +4,8 @@ import IconsResolver from 'unplugin-icons/resolver'
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // server side rendering mode
-  ssr: false,
+  ssr: true,
+
 
   // typescripts
   typescript: {
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
   // modules
   modules: [
     'unplugin-icons/nuxt',
-    '@intlify/nuxt3',
+    // '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxt/content',
     '@vueuse/nuxt',
@@ -48,6 +49,8 @@ export default defineNuxtConfig({
       dedupe: ['vue-router'],
     },
     plugins: [
+      require('@headlessui/tailwindcss'),
+      { src: '~/plugins/vue-kinesis.js', mode: 'client' },
       UnpluginComponentsVite({
         dts: true,
         resolvers: [
@@ -62,20 +65,18 @@ export default defineNuxtConfig({
   // app config
   app: {
     // global transition
-    // pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: 'page-fade', mode: 'out-in' },
     // layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   // localization - i18n config
-  intlify: {
-    localeDir: 'locales',
-    vueI18n: {
-      locale: 'en',
-      fallbackLocale: 'en',
-      availableLocales: ['en'],
-      // availableLocales: ['en', 'id', 'ja', 'ko'],
-    },
-  },
+  // @TODO debug generate issues
+  // i18n: {
+  //   vueI18n: './i18n.config.ts',
+  //   // locales: [{ code: 'en', file: 'en.yml' }],
+  //   // langDir: 'locales',
+  //   // defaultLocale: 'en'
+  // },
 
   // vueuse
   vueuse: {
@@ -112,6 +113,7 @@ export default defineNuxtConfig({
       ignore: ['/ignore/'],
     },
   },
+
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
@@ -141,9 +143,6 @@ export default defineNuxtConfig({
     },
     client: {
       installPrompt: false,
-      // you don't need to include this: only for testing purposes
-      // if enabling periodic sync for update use 1 hour or so (periodicSyncForUpdates: 3600)
-      periodicSyncForUpdates: 20,
     },
     devOptions: {
       enabled: true,

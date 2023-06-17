@@ -51,7 +51,7 @@ const toggleOptions = (show?: boolean) => {
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md py-2 drop-shadow-dec top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-800 dark:border-slate-300/[0.2] bg-white/[0.5] dark:bg-slate-900"
+    class="backdrop-filter backdrop-blur-md py-2 top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-800 dark:border-slate-300/[0.2] bg-ugradient"
   >
     <div id="navbar-banner" class="banner">
       <slot name="banner" />
@@ -70,7 +70,7 @@ const toggleOptions = (show?: boolean) => {
               @click="toggleDrawer()"
             >
               <span
-                class="flex items-center text-gray-600 dark:text-gray-300 text-lg"
+                class="flex items-center text-black text-lg"
                 aria-hidden="true"
               >
                 <IconUil:bars v-if="!showDrawer" />
@@ -82,13 +82,13 @@ const toggleOptions = (show?: boolean) => {
           <slot name="title">
             <NuxtLink
               tag="a"
-              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-gray-900 dark:text-slate-400"
+              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-black"
               :to="{ name: 'index' }"
             >
               <span class="sr-only">home</span>
-              <span class="flex items-center dark:text-slate-400">
-                <BrandLogo
-                  class="inline-block mr-2 text-lg h-8 w-36"
+              <span class="flex items-center">
+                <BrandLogoMonotone
+                  class="inline-block mr-2 text-lg h-8 w-36 text-black"
                   :alt="app.name"
                 />
               </span>
@@ -107,7 +107,7 @@ const toggleOptions = (show?: boolean) => {
               @click="toggleOptions()"
             >
               <span
-                class="flex items-center text-gray-600 dark:text-gray-300 text-sm"
+                class="flex items-center text-black text-sm"
                 aria-hidden="true"
               >
                 <icon-fa-solid:ellipsis-v />
@@ -161,11 +161,11 @@ a.router-link-active {
   font-weight: bold;
 }
 a.router-link-exact-active {
-  color: theme('colors.gray.800');
+  // color: theme('colors.gray.800');
 }
 html.dark {
   a.router-link-exact-active {
-    color: theme('colors.slate.400');
+    // color: theme('colors.slate.400');
   }
 }
 </style>

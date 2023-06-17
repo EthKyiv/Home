@@ -23,9 +23,9 @@
       <ActionSheet @on-close="toggleOptions(false)">
         <ActionSheetBody>
           <ActionSheetHeader text="Menu" />
-          <div class="mt-6 text-sm font-bold capitalize">
+          <!-- <div class="mt-6 text-sm font-bold capitalize">
             {{ $t('components.theme_switcher.change_theme') }}
-          </div>
+          </div> -->
           <!-- <div class="mt-2">
             <ThemeSwitcher type="select-box" />
           </div> -->
@@ -39,7 +39,7 @@
 
         <Button
           text="Close"
-          type="secondary"
+          type="transparent"
           @click.prevent="toggleOptions(false)"
         />
       </ActionSheet>

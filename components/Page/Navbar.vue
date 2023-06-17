@@ -9,7 +9,6 @@ export interface IMenuItem {
   hash?: string
 }
 
-const { t } = useLang()
 const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
   {
@@ -45,7 +44,7 @@ const menus = computed((): IMenuItem[] => [
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <nav
-          class="text-sm leading-6 font-semibold text-gray-600 dark:text-slate-300"
+          class="text-sm leading-6 font-semibold text-gray-900"
           role="navigation"
         >
           <ul class="flex items-center space-x-8">
@@ -54,14 +53,14 @@ const menus = computed((): IMenuItem[] => [
                 v-if="item.type === 'link'"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
-                class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 capitalize"
+                class="hover:no-underline text-gray-900 hover:text-black dark:hover:text-black capitalize"
                 >{{ item.text }}</Anchor
               >
               <Button
                 v-else-if="item.type === 'button'"
                 :text="item.text"
                 size="sm"
-                type="secondary"
+                type="transparent"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
               />
@@ -74,14 +73,14 @@ const menus = computed((): IMenuItem[] => [
           <!-- <LanguageSwitcher /> -->
           <!-- <ThemeSwitcher /> -->
           <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 text-lg flex self-center items-center"
+            class="hover:no-underline text-gray-900 hover:dark:text-black text-lg flex self-center items-center"
             v-bind="app.links.linktree"
             target="_blank"
           >
             <IconMdi:link-box-variant />
           </Anchor>
           <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-primary-100 dark:text-slate-400 text-lg flex self-center items-center"
+            class="hover:no-underline text-gray-900 hover:dark:text-black text-lg flex self-center items-center"
             v-bind="app.links.twitter"
             target="_blank"
           >
@@ -94,7 +93,7 @@ const menus = computed((): IMenuItem[] => [
       <ActionSheet @on-close="toggleOptions(false)">
         <ActionSheetBody>
           <ActionSheetHeader text="Menu" />
-          <nav class="leading-6 text-gray-800 dark:text-slate-400">
+          <nav class="leading-6 text-gray-900 dark:text-slate-400">
             <ul class="flex flex-col">
               <li
                 v-for="(item, i) in menus"
@@ -124,9 +123,9 @@ const menus = computed((): IMenuItem[] => [
               </li>
             </ul>
           </nav>
-          <div class="mt-6 text-sm font-bold capitalize">
+          <!-- <div class="mt-6 text-sm font-bold capitalize">
             {{ $t('components.theme_switcher.change_theme') }}
-          </div>
+          </div> -->
           <!-- <div class="mt-2">
             <ThemeSwitcher type="select-box" />
           </div> -->
@@ -139,7 +138,7 @@ const menus = computed((): IMenuItem[] => [
         </ActionSheetBody>
         <Button
           text="Close"
-          type="secondary"
+          type="transparent"
           @click.prevent="toggleOptions(false)"
         />
       </ActionSheet>

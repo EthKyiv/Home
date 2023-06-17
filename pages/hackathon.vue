@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { AppConfigInput } from '@nuxt/schema'
 // composable
 
-const app = useAppConfig() as AppConfigInput
 // meta
 definePageMeta({
+  // pageTransition: {
+  //   name: 'slide-right',
+  //   mode: 'out-in'
+  // },
   layout: 'page',
 })
 </script>
@@ -44,14 +46,14 @@ definePageMeta({
                 >
                   Hackathon
                 </h2>
-
                 <Button
                   size="lg"
                   class="font-bold mt-8 stretched-link"
                   type="primary"
+                  target="_blank"
                   to="hackathon"
                 >
-                  Join the hack
+                  Apply to attend
                 </Button>
               </CardContent>
             </Card>
@@ -72,7 +74,7 @@ definePageMeta({
                   <h2
                     class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                   >
-                    Conference
+                    Volunteer
                   </h2>
 
                   <Button
@@ -82,7 +84,7 @@ definePageMeta({
                     target="_blank"
                     href="https://"
                   >
-                    Speak or sponsor
+                    volunteer
                   </Button>
                 </CardContent>
               </Card>
@@ -90,81 +92,33 @@ definePageMeta({
           </div>
         </PageSection>
       </kinesis-container>
-      <PageSection
-        id="sponsors"
-        class="flex-1 flex flex-col items-start justify-center mt-10"
-      >
-        <h2
-          class="text-gray-800 dark:text-slate-300 font-bold uppercase text-5xl"
-        >
-          Sponsors
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full my-8">
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 15000 ETH</span>
-              </div>
-
-              <h3 class="text-primary-500 uppercase font-bold text-3xl">
-                Best sponsor
-              </h3>
-              <h4 class="font-bold text-lg mb-2">description</h4>
-              <p>
-                Ladipisicing elit. Fugiat ea reiciendis veniam aut repellat,
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 5000 ETH</span>
-              </div>
-
-              <h3 class="text-primary-500 uppercase font-bold text-3xl">
-                Other one
-              </h3>
-              <h4 class="font-bold text-lg mb-2">
-                Subtitle bounty description
-              </h4>
-
-              <p>
-                Ladipisicing elit. Fugiat ea reiciendis veniam aut repellat,
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 500 ETH</span>
-              </div>
-
-              <h3 class="text-primary-500 uppercase font-bold text-3xl">
-                Some long long sponsor name
-              </h3>
-              <h4 class="font-bold text-lg mb-2">description</h4>
-
-              <p>
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </PageSection>
     </PageBody>
   </PageWrapper>
 </template>
 
 <style lang="scss">
 @import '../assets/sass/variables';
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.2s;
+}
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translate(50px, 0);
+}
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translate(50px, 0);
 
 html.dark {
 }

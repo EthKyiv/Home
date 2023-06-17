@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<!-- <script lang="ts" setup>
 import {
   Listbox,
   ListboxButton,
@@ -85,4 +85,4 @@ const currentStyle = toRef(props, 'type')
       </option>
     </select>
   </div>
-</template>
+</template> -->
