@@ -7,10 +7,6 @@ const app = useAppConfig() as AppConfigInput
 
 // meta
 definePageMeta({
-  // pageTransition: {
-  //   name: 'slide-right',
-  //   mode: 'out-in'
-  // },
   layout: 'page',
 })
 </script>
@@ -21,12 +17,22 @@ definePageMeta({
       <kinesis-container event="move">
         <PageSection
           id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-20 lg:py-40"
+          class="flex flex-col items-start justify-center py-10 md:py-10 lg:pt-20 lg:pb-40"
         >
-          <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-15">
-            <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
-              >14 - 15 September 2023
-            </span>
+          <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
+            <div class="flex flex-col-reverse md:flex-row gap-6">
+              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
+                >14 - 15 September 2023
+              </span>
+              <Button
+                size="sm"
+                class="font-bold whitespace-nowrap"
+                type="opposite"
+                :to="{ name: 'index', hash: '#tickets' }"
+              >
+                Early bird tickets
+              </Button>
+            </div>
             <h1 class="mt-0">
               <span class="sr-only"> ETH Kyiv</span>
               <BrandLogoDecorative
@@ -96,28 +102,8 @@ definePageMeta({
           </div>
         </PageSection>
 
-        <PageSection
-          id="tickets"
-          class="flex-1 flex flex-col items-start justify-center mt-10"
-        >
-          <h2
-            class="text-gray-800 dark:text-slate-300 font-bold uppercase text-3xl"
-          >
-            Tickets
-          </h2>
-          <div
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4"
-          >
-            <Tickets title="hacker" price="Free" color="bg-green-400"></Tickets>
-            <Tickets title="online" price="$50,-" color="bg-blue-500"></Tickets>
-            <Tickets
-              featured
-              title="general"
-              price="$99,-"
-              color="bg-yellow-500"
-            ></Tickets>
-          </div>
-        </PageSection>
+        <PageSectionTickets></PageSectionTickets>
+        <PageSectionFAQ></PageSectionFAQ>
       </kinesis-container>
     </PageBody>
   </PageWrapper>

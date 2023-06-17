@@ -2,7 +2,7 @@
 import { AppConfigInput } from '@nuxt/schema'
 
 // state
-const app = useAppConfig() as AppConfigInput;
+const app = useAppConfig() as AppConfigInput
 defineProps({
   featured: {
     type: Boolean,

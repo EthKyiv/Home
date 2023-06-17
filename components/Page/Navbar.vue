@@ -18,8 +18,8 @@ const menus = computed((): IMenuItem[] => [
   },
   {
     type: 'link',
-    text: 'Sponsors',
-    route: { path: '/', hash: '#sponsors' },
+    text: 'FAQ',
+    route: { hash: '#FAQ' },
   },
   {
     type: 'button',
