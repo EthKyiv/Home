@@ -23,8 +23,8 @@ const menus = computed((): IMenuItem[] => [
   },
   {
     type: 'button',
-    text: 'apply now',
-    href: '/',
+    text: 'Tickets',
+    route: { hash: '#tickets' },
   },
   // { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
 ])

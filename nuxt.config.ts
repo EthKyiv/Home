@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   // server side rendering mode
   ssr: true,
 
-
   // typescripts
   typescript: {
     strict: true,
@@ -65,7 +64,7 @@ export default defineNuxtConfig({
   // app config
   app: {
     // global transition
-    //pageTransition: { name: 'page-fade', mode: 'out-in' },
+    // pageTransition: { name: 'page-fade', mode: 'out-in' },
     // layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 

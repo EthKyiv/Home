@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { AppConfigInput } from '@nuxt/schema'
+
+// state
+const app = useAppConfig() as AppConfigInput
 // composable
 
 // meta
@@ -17,7 +21,7 @@ definePageMeta({
       <kinesis-container event="move">
         <PageSection
           id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-20 lg:py-50"
+          class="flex flex-col items-start justify-center py-10 md:py-20 lg:py-40"
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-15">
             <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
@@ -51,7 +55,7 @@ definePageMeta({
                   class="font-bold mt-8 stretched-link"
                   type="primary"
                   target="_blank"
-                  to="hackathon"
+                  v-bind="app.links.application_hacker"
                 >
                   Apply to attend
                 </Button>
@@ -82,13 +86,36 @@ definePageMeta({
                     class="font-bold mt-8 stretched-link"
                     type="secondary"
                     target="_blank"
-                    href="https://"
+                    v-bind="app.links.discord"
                   >
                     volunteer
                   </Button>
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </PageSection>
+
+        <PageSection
+          id="tickets"
+          class="flex-1 flex flex-col items-start justify-center mt-10"
+        >
+          <h2
+            class="text-gray-800 dark:text-slate-300 font-bold uppercase text-3xl"
+          >
+            Tickets
+          </h2>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4"
+          >
+            <Tickets title="hacker" price="Free" color="bg-green-400"></Tickets>
+            <Tickets title="online" price="$50,-" color="bg-blue-500"></Tickets>
+            <Tickets
+              featured
+              title="general"
+              price="$99,-"
+              color="bg-yellow-500"
+            ></Tickets>
           </div>
         </PageSection>
       </kinesis-container>
