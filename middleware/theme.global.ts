@@ -1,8 +1,12 @@
 import { useTheme } from '~/stores/theme'
-export default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware((route) => {
   const theme = useTheme()
-  const routeName = to.name
-  if (theme.current === 'light' && routeName === 'hackathon') {
+  if (route == undefined) {
+    theme.lightTheme()
+    return
+  }
+  const routeName = route.name
+  if (routeName === 'hackathon') {
     theme.darkTheme()
   } else {
     theme.lightTheme()
