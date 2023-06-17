@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<!-- <script lang="ts" setup>
 import {
   Listbox,
   ListboxButton,
@@ -79,4 +79,4 @@ const localeSetting = useState<string>('locale.setting')
       </option>
     </select>
   </div>
-</template>
+</template> -->

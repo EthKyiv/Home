@@ -39,6 +39,7 @@ const styles = reactive<{
     'text-gray-800 bg-white border-gray-800 dark:bg-slate-950 dark:border-slate-300 dark:text-slate-300 hover:bg-yellow-600 hover:dark:bg-slate-900 hover:dark:text-yellow-600 dark:border-slate-800 hover:dark:border-yellow-600',
   opposite:
     'text-white bg-gray-800 hover:bg-white hover:text-gray-800 hover:border-gray-900 dark:text-gray-800 dark:bg-gray-100 dark:hover:bg-secondary-800 dark:hover:text-slate-800 ',
+  transparent: 'text-gray-900 border-gray-900 hover:bg-yellow',
 })
 const sizes = reactive<{
   [key: string]: string

@@ -6,8 +6,8 @@
     "skipLibCheck": true,
     "types": [
       "nuxt-windicss",
+      "@nuxtjs/i18n",
       "@vueuse/nuxt",
-      "@intlify/nuxt3",
       "@pinia/nuxt",
       "unplugin-icons/types/vue"
     ]
