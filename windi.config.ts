@@ -15,13 +15,13 @@ import FiltersPlugin from 'windicss/plugin/filters'
 const MyTheme = {
   colors: {
     green: {
-      DEFAULT: '#73CA9A',
+      DEFAULT: '#00F3A3',
       50: '#F8FCFA',
-      100: '#E9F7EF',
-      200: '#CCECDA',
-      300: '#AEE0C5',
-      400: '#91D5AF',
-      500: '#73CA9A',
+      100: '#C8FEEC',
+      200: '#8EFFDA',
+      300: '#5EFFCA',
+      400: '#18FFB3',
+      500: '#00F3A3',
       600: '#4ACBC4',
       700: '#389562',
       800: '#296C47',
@@ -84,6 +84,7 @@ const MyTheme = {
       200: '#ededed',
       800: '#575757',
     },
+    black: { DEFAULT: '#040404' },
   },
 }
 
@@ -116,6 +117,7 @@ export default defineConfig({
         red: MyTheme.colors.red,
         gray: MyTheme.colors.gray,
         slate: MyTheme.colors.slate,
+        black: MyTheme.colors.black,
       },
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
