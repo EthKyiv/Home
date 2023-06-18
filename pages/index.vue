@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { AppConfigInput } from '@nuxt/schema'
+// state
+const app = useAppConfig() as AppConfigInput
 // meta
 definePageMeta({
   layout: 'page',
@@ -24,7 +27,7 @@ definePageMeta({
                 type="opposite"
                 :to="{ name: 'index', hash: '#tickets' }"
               >
-                Early bird tickets
+                Register
               </Button>
             </div>
 
@@ -65,15 +68,15 @@ definePageMeta({
             <Card class="drop-shadow-dec z-10">
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
-                  <span class="text-secondary-500">
-                    Ukraine’s Premier Ethereum
+                  <span class="text-secondary-500 text-sm">
+                    Ukraine’s Premier Ethereum Conference
                   </span>
                 </div>
 
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Conference
+                  Contribute
                 </h2>
                 <p class="text-sm leading-tight mt-3">
                   With 1500 attendants, 50 speakers and thousands of online
@@ -85,9 +88,9 @@ definePageMeta({
                     size="lg"
                     class="font-bold stretched-link whitespace-nowrap"
                     type="secondary"
-                    :to="{ path: '/', hash: '#sponsors' }"
+                    :to="{ path: '/', hash: '#speakers' }"
                   >
-                    Speak or sponsor
+                    Apply to speak
                   </Button>
                 </CardFooter>
               </CardContent>
@@ -103,7 +106,7 @@ definePageMeta({
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Hackathon
+                  Support
                 </h2>
                 <p class="text-sm leading-tight mt-3">
                   The 3 day Hackathon with more than 200 developers, plus
@@ -112,11 +115,12 @@ definePageMeta({
                 <CardFooter>
                   <Button
                     size="lg"
-                    class="font-bold stretched-link self-end"
+                    class="font-bold stretched-link self-end whitespace-nowrap"
                     type="primary"
-                    :to="{ path: '/hackathon' }"
+                    v-bind="app.links.application_hacker"
                   >
-                    Join the hack
+                    Mentor | Volunteer
+                    <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
               </CardContent>
@@ -132,92 +136,19 @@ definePageMeta({
         <h2
           class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl"
         >
-          DAY ZERO
+          DayZero
         </h2>
         <div
           class="grid md:grid-cols-2 lg:grid-cols-6 gap-4 w-full mb-8 mt-4 bg-white/[0.8] border-black"
         >
           <div class="col-span-3">
-            <br />
+            <BrandLogo class="text-white" />
           </div>
         </div>
       </PageSection>
       <PageSectionTickets></PageSectionTickets>
-      <PageSection
-        id="sponsors"
-        class="flex-1 flex flex-col items-start justify-center mt-10"
-      >
-        <h2
-          class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl"
-        >
-          Sponsors
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-4 mt-4">
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 15000 ETH</span>
-              </div>
-
-              <h3
-                class="text-primary-500 uppercase font-bold text-3xl leading-tight"
-              >
-                Best sponsor
-              </h3>
-              <h4 class="font-bold text-lg mb-2">description</h4>
-              <p>
-                Ladipisicing elit. Fugiat ea reiciendis veniam aut repellat,
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 5000 ETH</span>
-              </div>
-
-              <h3
-                class="text-primary-500 uppercase font-bold text-3xl leading-tight"
-              >
-                Other one
-              </h3>
-              <h4 class="font-bold text-lg mb-2">
-                Subtitle bounty description
-              </h4>
-
-              <p>
-                Ladipisicing elit. Fugiat ea reiciendis veniam aut repellat,
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-          <Card class="mb-4">
-            <CardContent>
-              <div class="uppercase font-bold">
-                <span class="text-secondary-500"> 500 ETH</span>
-              </div>
-
-              <h3
-                class="text-primary-500 uppercase font-bold text-3xl leading-tight"
-              >
-                Some long long sponsor name
-              </h3>
-              <h4 class="font-bold text-lg mb-2">description</h4>
-
-              <p>
-                maiores dolor suscipit tempore quod perspiciatis distinctio
-                accusantium commodi molestias, labore blanditiis nisi. Corporis,
-                saepe ullam.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </PageSection>
+      <PageSectionSpeakers></PageSectionSpeakers>
+      <PageSectionPartners></PageSectionPartners>
       <PageSectionFAQ></PageSectionFAQ>
     </PageBody>
   </PageWrapper>

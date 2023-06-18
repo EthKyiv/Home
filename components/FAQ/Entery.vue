@@ -17,7 +17,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           <IconMdi:triangle
             :class="[
               open ? 'rotate-180 ' : 'rotate-90',
-              `ease-in duration-300 transform  bg-blue-400  text-gray-900 text-xl p-1 border border-1 border-gray-900 rounded`,
+              `ease-in duration-300 transform  bg-blue-400  text-gray-900 text-xl p-1 border border-1 border-gray-900 rounded w-6 h-6`,
             ]"
           />
         </div>

@@ -8,15 +8,21 @@ const app = useAppConfig() as AppConfigInput
     class="flex-1 flex flex-col items-start justify-center mt-10"
   >
     <h2 class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl">
-      Tickets
+      Attend & support
     </h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4">
-      <Tickets title="hacker" price="Free" color="bg-green-400"></Tickets>
-      <Tickets title="online" price="$50,-" color="bg-blue-500"></Tickets>
+      <Tickets
+        title="hacker"
+        price="Free"
+        color="bg-green-400"
+        button-title="Apply"
+        :link="{ to: '/hackathon', title: 'Apply to hack' }"
+      ></Tickets>
+      <Tickets title="online" price="TBA" color="bg-blue-500"></Tickets>
       <Tickets
         featured
         title="general"
-        price="$99,-"
+        price="TBA"
         color="bg-yellow-500"
       ></Tickets>
     </div>

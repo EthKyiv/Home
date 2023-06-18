@@ -17,7 +17,7 @@ definePageMeta({
       <kinesis-container event="move">
         <PageSection
           id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-10 lg:pt-20 lg:pb-40"
+          class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
@@ -28,9 +28,10 @@ definePageMeta({
                 size="sm"
                 class="font-bold whitespace-nowrap"
                 type="opposite"
-                :to="{ name: 'index', hash: '#tickets' }"
+                target="_blank"
+                v-bind="app.links.application_hacker"
               >
-                Early bird tickets
+                Apply to Attend
               </Button>
             </div>
             <h1 class="mt-0">
@@ -40,11 +41,24 @@ definePageMeta({
                 alt="ETH Kyiv logo"
               />
             </h1>
+            <div class="lg:w-1/2 mt-4">
+              <h2
+                class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
+              >
+                Ukrains top community-driven Ethereum event
+              </h2>
+              <p class="text-sm">
+                Through the hackathon, conference and side events like DayZero,
+                discussions, collaborations, and vast networking, we aim to
+                further establish Kyiv as an innovation and infrastructure
+                development leader.
+              </p>
+            </div>
           </div>
           <div
             class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3"
           >
-            <Card class="mb-4">
+            <Card class="mb-4 drop-shadow-dec">
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
@@ -56,15 +70,21 @@ definePageMeta({
                 >
                   Hackathon
                 </h2>
-                <Button
-                  size="lg"
-                  class="font-bold mt-8 stretched-link"
-                  type="primary"
-                  target="_blank"
-                  v-bind="app.links.application_hacker"
-                >
-                  Apply to attend
-                </Button>
+                <p class="text-sm leading-tight mt-3">
+                  The 3 day Hackathon with more than 200 developers, plus
+                  mentors, judges, speakers & staff.
+                </p>
+                <CardFooter>
+                  <Button
+                    size="lg"
+                    class="font-bold stretched-link"
+                    type="primary"
+                    target="_blank"
+                    v-bind="app.links.application_hacker"
+                  >
+                    Apply to attend <IconMdi:open-in-new class="text-sm ml-3" />
+                  </Button>
+                </CardFooter>
               </CardContent>
             </Card>
             <div class="relative">
@@ -73,12 +93,11 @@ definePageMeta({
                   class="absolute hidden lg:block top-0 right-0 transform -translate-y-59 translate-x-10 z-0"
                 />
               </kinesis-element>
-              <Card class="mb-4 drop-shadow-dec z-10">
+              <Card class="mb-4 z-10">
                 <CardContent>
                   <div class="uppercase font-bold text-gray-300">
-                    <span class="text-secondary-500">
-                      Ukraine’s Premier Ethereum
-                    </span>
+                    <span class="text-primary-500">Kyiv</span> |
+                    <span class="text-secondary-500"> Online</span>
                   </div>
 
                   <h2
@@ -86,23 +105,31 @@ definePageMeta({
                   >
                     Volunteer
                   </h2>
-
-                  <Button
-                    size="lg"
-                    class="font-bold mt-8 stretched-link"
-                    type="secondary"
-                    target="_blank"
-                    v-bind="app.links.discord"
-                  >
-                    volunteer
-                  </Button>
+                  <p class="text-sm leading-tight mt-3">
+                    With 1500 attendants, 50 speakers and thousands of online
+                    viewers. This is where Ethereum meets Ukraine, and Kyiv
+                    meets the future.
+                  </p>
+                  <CardFooter>
+                    <Button
+                      size="lg"
+                      class="font-bold stretched-link whitespace-nowrap"
+                      type="secondary"
+                      target="_blank"
+                      v-bind="app.links.discord"
+                    >
+                      volunteer <IconMdi:discord class="ml-3" />
+                    </Button>
+                  </CardFooter>
                 </CardContent>
               </Card>
             </div>
           </div>
         </PageSection>
 
-        <PageSectionTickets></PageSectionTickets>
+        <PageSectionBounties></PageSectionBounties>
+        <PageSectionAgenda></PageSectionAgenda>
+        <PageSectionPartners></PageSectionPartners>
         <PageSectionFAQ></PageSectionFAQ>
       </kinesis-container>
     </PageBody>

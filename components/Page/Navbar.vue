@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
-
 export interface IMenuItem {
   type: 'link' | 'button'
   text: string
@@ -10,22 +9,26 @@ export interface IMenuItem {
 }
 
 const app = useAppConfig() as AppConfigInput
+const route = useRoute()
+
+const hackButton: IMenuItem = {
+  type: 'button',
+  text: 'Hack',
+  route: { path: '/hackathon' },
+}
+const mainButton: IMenuItem = {
+  type: 'button',
+  text: 'Conference',
+  route: { path: '/' },
+}
+
 const menus = computed((): IMenuItem[] => [
-  {
-    type: 'link',
-    text: 'home',
-    route: { path: '/', hash: '#home' },
-  },
   {
     type: 'link',
     text: 'FAQ',
     route: { hash: '#FAQ' },
   },
-  {
-    type: 'button',
-    text: 'Tickets',
-    route: { hash: '#tickets' },
-  },
+  route.name === 'hackathon' ? mainButton : hackButton,
   // { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
 ])
 </script>
@@ -60,6 +63,7 @@ const menus = computed((): IMenuItem[] => [
                 v-else-if="item.type === 'button'"
                 :text="item.text"
                 size="sm"
+                class="min-w-36"
                 type="transparent"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
@@ -70,8 +74,6 @@ const menus = computed((): IMenuItem[] => [
         <div
           class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
         >
-          <!-- <LanguageSwitcher /> -->
-          <!-- <ThemeSwitcher /> -->
           <Anchor
             class="hover:no-underline text-gray-900 hover:dark:text-black text-lg flex self-center items-center"
             v-bind="app.links.linktree"
@@ -123,18 +125,6 @@ const menus = computed((): IMenuItem[] => [
               </li>
             </ul>
           </nav>
-          <!-- <div class="mt-6 text-sm font-bold capitalize">
-            {{ $t('components.theme_switcher.change_theme') }}
-          </div> -->
-          <!-- <div class="mt-2">
-            <ThemeSwitcher type="select-box" />
-          </div> -->
-          <!-- <div class="mt-6 text-sm font-bold capitalize">
-            {{ $t('components.language_switcher.change_language') }}
-          </div>
-          <div class="mt-2">
-            <LanguageSwitcher type="select-box" />
-          </div> -->
         </ActionSheetBody>
         <Button
           text="Close"
