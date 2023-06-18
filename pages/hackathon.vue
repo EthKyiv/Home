@@ -20,19 +20,11 @@ definePageMeta({
           class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
-            <div class="flex flex-col-reverse md:flex-row gap-6">
-              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
+            <div class="flex flex-col-reverse md:flex-row gap-6 m">
+              <span
+                class="text-xl md:text-2xl lg:text-3xl font-bold uppercase h-9"
                 >14 - 15 September 2023
               </span>
-              <Button
-                size="sm"
-                class="font-bold whitespace-nowrap"
-                type="opposite"
-                target="_blank"
-                v-bind="app.links.application_hacker"
-              >
-                Apply to Attend
-              </Button>
             </div>
             <h1 class="mt-0">
               <span class="sr-only"> ETH Kyiv</span>
@@ -68,7 +60,7 @@ definePageMeta({
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Hackathon
+                  Build
                 </h2>
                 <p class="text-sm leading-tight mt-3">
                   The 3 day Hackathon with more than 200 developers, plus
@@ -113,7 +105,7 @@ definePageMeta({
                   <CardFooter>
                     <Button
                       size="lg"
-                      class="font-bold stretched-link whitespace-nowrap"
+                      class="font-bold stretched-link"
                       type="secondary"
                       target="_blank"
                       v-bind="app.links.discord"
