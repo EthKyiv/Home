@@ -13,12 +13,12 @@ export default defineAppConfig({
       title: 'Instagram',
       href: 'https://www.instagram.com/ethkyiv/',
     },
-    discord: { title: 'Discord', href: 'https://discord.cc' },
+    discord: { title: 'Discord', href: 'https://discord.com' },
     discord_support: {
       title: 'Discord Support Channel',
-      href: 'https://discord.cc',
+      href: 'https://discord.com',
     },
-    tickets: { title: 'Buy now', href: 'https://www.eventbrite.com/' },
+    tickets: { title: 'Register now', href: 'https://www.eventbrite.com/' },
     application_hacker: {
       title: 'Apply for a spot',
       href: 'https://www.typeform.com/',

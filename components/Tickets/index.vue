@@ -3,6 +3,8 @@ import { AppConfigInput } from '@nuxt/schema'
 
 // state
 const app = useAppConfig() as AppConfigInput
+const buttonLink = computed(() => app.links.tickets)
+
 defineProps({
   featured: {
     type: Boolean,
@@ -23,7 +25,15 @@ defineProps({
   color: {
     type: String,
     required: false,
-    default: 'red',
+    default: 'bg-primary-500',
+  },
+  link: {
+    type: Object,
+    required: false,
+  },
+  buttonTitle: {
+    type: String,
+    default: 'Register',
   },
 })
 </script>
@@ -67,10 +77,10 @@ defineProps({
       <CardFooter>
         <Button
           class="stretched-link"
-          :text="'Get your ticket'"
+          :text="buttonTitle"
           size="md"
           :type="featured ? 'transparentLight' : 'secondary'"
-          v-bind="app.links.tickets"
+          v-bind="link ? link : buttonLink"
         />
       </CardFooter>
     </CardContent>
