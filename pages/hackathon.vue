@@ -17,7 +17,7 @@ definePageMeta({
       <kinesis-container event="move">
         <PageSection
           id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-10 lg:pt-20 lg:pb-40"
+          class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
@@ -127,7 +127,9 @@ definePageMeta({
           </div>
         </PageSection>
 
-        <PageSectionTickets></PageSectionTickets>
+        <PageSectionBounties></PageSectionBounties>
+        <PageSectionAgenda></PageSectionAgenda>
+        <PageSectionPartners></PageSectionPartners>
         <PageSectionFAQ></PageSectionFAQ>
       </kinesis-container>
     </PageBody>
