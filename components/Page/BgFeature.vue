@@ -26,10 +26,11 @@ export default {
       return Math.floor(
         Math.sqrt(
           Math.pow(mouseX - (elem.x + elem.width / 2), 2) +
-            Math.pow(mouseY - (elem.top + elem.height / 2), 2)
+            Math.pow(mouseY - (elem.top + window.scrollY + elem.height / 2), 2)
         )
       )
     }
+
     function onFocusOut() {
       if (!enableAnimation) {
         return
@@ -40,18 +41,26 @@ export default {
       if (!enableAnimation) {
         return
       }
+
       const pointerRect = nuxtImg.getBoundingClientRect()
       if (!bodyRect) {
         bodyRect = body.getBoundingClientRect()
       }
       const distance = calculateDistance(pointerRect, e.pageX, e.pageY)
       const size = Math.max((1000 - distance) / 2 / 100, 1)
-
-      // mouseLight.style.top = `${e.clientY - bodyRect.y - mouseLight.clientHeight / 2}px`
-      // mouseLight.style.left = `${e.clientX - mouseLight.clientWidth / 2}px`
-      // mouseLight.style.width = mouseLight.style.height = `${Math.max(Math.round(size * 40), 200)}px`
-      // mouseLight.style.filter = `blur(${Math.min(Math.max(size * 20, 100), 120)}px)`
-      // mouseLight.style.opacity = Math.min(Math.max( size / 2, 0.8), 0.2)
+      mouseLight.style.top = `${
+        e.clientY - bodyRect.y - mouseLight.clientHeight / 2
+      }px`
+      mouseLight.style.left = `${e.clientX - mouseLight.clientWidth / 2}px`
+      mouseLight.style.width = mouseLight.style.height = `${Math.max(
+        Math.round(size * 40),
+        200
+      )}px`
+      mouseLight.style.filter = `blur(${Math.min(
+        Math.max(size * 20, 100),
+        120
+      )}px)`
+      mouseLight.style.opacity = Math.min(Math.max(size / 2, 0.8), 0.2)
 
       mouseLight.style.top = `${
         e.clientY - bodyRect.y - mouseLight.clientHeight / 2
@@ -65,7 +74,7 @@ export default {
         Math.max(size * 50, 100),
         160
       )}px)`
-      mouseLight.style.opacity = Math.min(Math.max(size / 4, 0.8), 0.9)
+      mouseLight.style.opacity = Math.min(Math.max(size / 2, 0.8), 0.9)
 
       const dx = e.pageX - pointerRect.left
       const dy = e.pageY - pointerRect.top
@@ -101,40 +110,15 @@ export default {
   z-index: -1;
 }
 
-.dark .visual-effects .mouse-gradient {
-  background: repeating-linear-gradient(
-    to right,
-    #92f495 0%,
-    #f6e30da8 50%,
-    #f1f6cdef 100%
-  );
-  filter: blur(500px);
-  opacity: 1;
-}
 .visual-effects .mouse-gradient {
   background: repeating-linear-gradient(
     to right,
-    #8a8af5 0%,
-    #d5afed 50%,
-    #ffe681ef
+    #006aff 0%,
+    #d9ff03 50%,
+    #05341c6d 100%
   );
   filter: blur(100px);
   opacity: 1;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
 
 .transition-opacity {
@@ -147,10 +131,5 @@ export default {
   -webkit-transition-duration: 0.15s;
   -o-transition-duration: 0.15s;
   transition-duration: 0.15s;
-}
-
-.dark .dark\:bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
 }
 </style>
