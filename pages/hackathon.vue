@@ -21,11 +21,11 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageBody>
-      <kinesis-container event="move">
         <PageSection
           id="home"
           class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
         >
+        <kinesis-container event="move">
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6 m">
               <span
@@ -57,7 +57,7 @@ definePageMeta({
           <div
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
-            <kinesis-element :strength="30" class="col-span-2">
+            <kinesis-element :strength="15" class="col-span-2">
               <BrandTaras
                 :width="233"
                 :height="254"
@@ -98,54 +98,45 @@ definePageMeta({
                 </CardFooter>
               </CardContent>
             </Card>
-            <div class="relative">
-              <kinesis-element :strength="20">
-                <BrandTaras
-                  :width="233"
-                  :height="254"
-                  class="absolute hidden lg:block top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+            <Card >
+              <CardContent>
+                <div class="uppercase font-bold text-gray-300">
+                  <span class="text-primary-500">Kyiv</span> |
+                  <span class="text-secondary-500"> Online</span>
+                </div>
+                <h2
+                  class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
+                >
+                  {{ card[1].title }}
+                </h2>
+                <ContentRenderer
+                  :value="card[1]"
+                  class="text-sm leading-tight mt-3"
                 />
-              </kinesis-element>
-              <Card class="mb-4 z-10">
-                <CardContent>
-                  <div class="uppercase font-bold text-gray-300">
-                    <span class="text-primary-500">Kyiv</span> |
-                    <span class="text-secondary-500"> Online</span>
-                  </div>
-                  <h2
-                    class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
+                <CardFooter class="self-start md:self-auto">
+                  <!-- @TODO add link via content -->
+                  <Button
+                    size="lg"
+                    class="font-bold stretched-link"
+                    type="secondary"
+                    target="_blank"
+                    v-bind="app.links.application_volunteer"
                   >
-                    {{ card[1].title }}
-                  </h2>
-                  <ContentRenderer
-                    :value="card[1]"
-                    class="text-sm leading-tight mt-3"
-                  />
-                  <CardFooter class="self-start md:self-auto">
-                    <!-- @TODO add link via content -->
-                    <Button
-                      size="lg"
-                      class="font-bold stretched-link"
-                      type="secondary"
-                      target="_blank"
-                      v-bind="app.links.application_volunteer"
-                    >
-                      {{ card[1].button }}
-                      <IconMdi:open-in-new class="text-sm ml-3" />
-                      <!-- <IconMdi:discord class="ml-3" /> -->
-                    </Button>
-                  </CardFooter>
-                </CardContent>
-              </Card>
+                    {{ card[1].button }}
+                    <IconMdi:open-in-new class="text-sm ml-3" />
+                    <!-- <IconMdi:discord class="ml-3" /> -->
+                  </Button>
+                </CardFooter>
+              </CardContent>
+            </Card>
             </div>
-          </div>
+          </kinesis-container>
         </PageSection>
 
         <PageSectionBounties></PageSectionBounties>
         <PageSectionAgenda></PageSectionAgenda>
         <PageSectionPartners></PageSectionPartners>
         <PageSectionFAQ></PageSectionFAQ>
-      </kinesis-container>
     </PageBody>
   </PageWrapper>
 </template>
