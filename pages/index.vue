@@ -31,7 +31,7 @@ definePageMeta({
               </span>
               <Button
                 size="sm"
-                class="font-bold whitespace-nowrap"
+                class="font-bold whitespace-nowrap self-start md:self-auto"
                 type="opposite"
                 :to="{ name: 'index', hash: '#tickets' }"
               >
@@ -42,33 +42,36 @@ definePageMeta({
             <h1 class="mt-0">
               <span class="sr-only"> ETH Kyiv</span>
               <BrandLogoDecorative
-                class="w-full md:w-auto"
+                class="w-full lg:w-630px md:w-auto"
                 alt="ETH Kyiv logo"
               />
             </h1>
-            <div class="lg:w-1/2 mt-4">
+
+            <div
+              class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] sm:bg-transparent sm:dark:bg-transparent"
+            >
               <h2
                 class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
               >
-                <h1>{{ data.title }}</h1>
+                {{ data.title }}
               </h2>
               <ContentRenderer :value="data" class="text-sm" />
             </div>
           </div>
 
           <div
-            class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3 grid-auto-rows"
+            class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <kinesis-element :strength="30" class="col-span-2">
               <BrandTaras
-                width="233"
-                height="254"
-                class="absolute hidden lg:block top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+                :width="233"
+                :height="254"
+                class="absolute w-30 h-30 md:w-auto md:h-auto top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>
           <div
-            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3 grid-auto-rows"
+            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <Card class="drop-shadow-dec z-10">
               <CardContent>
@@ -86,20 +89,21 @@ definePageMeta({
                   :value="card[0]"
                   class="text-sm leading-tight mt-3"
                 />
-                <CardFooter>
+                <CardFooter class="self-start md:self-auto">
                   <Button
                     size="lg"
-                    class="font-bold stretched-link whitespace-nowrap"
+                    class="font-bold stretched-link"
                     type="secondary"
-                    :to="{ path: '/', hash: '#speakers' }"
+                    v-bind="app.links.application_speaker"
                   >
-                  {{ card[0].button }}
+                    {{ card[0].button }}
+                    <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
               </CardContent>
             </Card>
 
-            <Card class="">
+            <Card>
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
@@ -114,14 +118,14 @@ definePageMeta({
                   :value="card[1]"
                   class="text-sm leading-tight mt-3"
                 />
-                <CardFooter>
+                <CardFooter class="self-start md:self-auto">
                   <Button
                     size="lg"
-                    class="font-bold stretched-link self-end whitespace-nowrap"
+                    class="font-bold stretched-link"
                     type="primary"
-                    v-bind="app.links.application_hacker"
+                    v-bind="app.links.application_mentor"
                   >
-                  {{ card[1].button }}
+                    Mentor
                     <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
@@ -158,6 +162,7 @@ definePageMeta({
 
 <style lang="scss">
 @import '../assets/sass/variables';
+
 @media screen and (max-width: 480px) {
 }
 </style>

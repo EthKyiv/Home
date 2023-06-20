@@ -6,7 +6,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
   <Disclosure
     v-slot="{ open }"
     as="dl"
-    class="bg-white dark:bg-slate-950/[0.88] rounded border-2 dark:border-1 border-gray-800 dark:border-slate-300/[0.5] p-6 col-span-2"
+    class="bg-white my-0 dark:bg-slate-950/[0.88] rounded border-2 dark:border-1 border-gray-800 dark:border-slate-300/[0.5] p-6 col-span-2"
   >
     <dt>
       <DisclosureButton
@@ -23,7 +23,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         </div>
       </DisclosureButton>
     </dt>
-    <DisclosurePanel as="dl" class="text-base pr-6"
+    <DisclosurePanel as="dd" class="text-base pr-6 ml-0"
       >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus
       quibusdam veritatis mollitia dicta doloribus repellat ullam beatae,
       perferendis blanditiis recusandae quidem. Ex perferendis animi praesentium

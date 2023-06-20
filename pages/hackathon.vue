@@ -37,21 +37,36 @@ definePageMeta({
             <h1 class="mt-0">
               <span class="sr-only"> ETH Kyiv</span>
               <BrandLogoDecorative
-                class="w-full md:w-auto"
+                class="w-full lg:w-630px md:w-auto"
                 alt="ETH Kyiv logo"
               />
             </h1>
-            <div class="lg:w-1/2 mt-4">
+
+            <div
+              class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] md:bg-transparent md:dark:bg-transparent"
+            >
               <h2
                 class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
               >
-                <h1>{{ data.title }}</h1>
+                {{ data.title }}
               </h2>
               <ContentRenderer :value="data" class="text-sm" />
             </div>
           </div>
+
           <div
-            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3"
+            class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
+          >
+            <kinesis-element :strength="30" class="col-span-2">
+              <BrandTaras
+                :width="233"
+                :height="254"
+                class="absolute w-30 h-30 md:w-auto md:h-auto top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+              />
+            </kinesis-element>
+          </div>
+          <div
+            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <Card class="mb-4 drop-shadow-dec">
               <CardContent>
@@ -68,7 +83,7 @@ definePageMeta({
                   :value="card[0]"
                   class="text-sm leading-tight mt-3"
                 />
-                <CardFooter>
+                <CardFooter class="self-start md:self-auto">
                   <!-- @TODO add link via content -->
                   <Button
                     size="lg"
@@ -106,17 +121,18 @@ definePageMeta({
                     :value="card[1]"
                     class="text-sm leading-tight mt-3"
                   />
-                  <CardFooter>
+                  <CardFooter class="self-start md:self-auto">
                     <!-- @TODO add link via content -->
                     <Button
                       size="lg"
                       class="font-bold stretched-link"
                       type="secondary"
                       target="_blank"
-                      v-bind="app.links.discord"
+                      v-bind="app.links.application_volunteer"
                     >
                       {{ card[1].button }}
-                      <IconMdi:discord class="ml-3" />
+                      <IconMdi:open-in-new class="text-sm ml-3" />
+                      <!-- <IconMdi:discord class="ml-3" /> -->
                     </Button>
                   </CardFooter>
                 </CardContent>
@@ -136,5 +152,6 @@ definePageMeta({
 
 <style lang="scss">
 @import '../assets/sass/variables';
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+}
 </style>
