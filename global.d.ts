@@ -24,6 +24,10 @@ declare module '@nuxt/schema' {
       discord_support: AppConfigLink,
       tickets: AppConfigLink,
       application_hacker: AppConfigLink,
+      application_speaker: AppConfigLink,
+      application_volunteer: AppConfigLink,
+      application_mentor: AppConfigLink,
+      application_media: AppConfigLink,
       hacker_manual: AppConfigLink,
       sponsor_manual: AppConfigLink,
     }

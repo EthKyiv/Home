@@ -73,7 +73,10 @@ useHead({
 <template>
   <Html :class="`${theme.current === 'dark' ? 'dark' : ''}`" lang="en">
     <VitePwaManifest />
-    <PageBgFeature v-if="theme.current === 'dark'"></PageBgFeature>
+    <PageBgFeature
+      v-if="theme.current === 'dark'"
+      class="invisible lg:visible"
+    ></PageBgFeature>
 
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-slate-400 bg-white dark:bg-slate-900 overscroll-y-none"

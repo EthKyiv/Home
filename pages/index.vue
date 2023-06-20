@@ -2,6 +2,14 @@
 import { AppConfigInput } from '@nuxt/schema'
 // state
 const app = useAppConfig() as AppConfigInput
+// data
+const { data } = await useAsyncData('home', () =>
+  queryContent('/page/home').findOne()
+)
+const card = await queryContent('page', 'home')
+  .where({ _partial: true, type: { $eq: 'card' } })
+  .find()
+
 // meta
 definePageMeta({
   layout: 'page',
@@ -18,12 +26,12 @@ definePageMeta({
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
-              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
-                >14 - 15 September 2023
+              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase">
+                {{ data.date }}
               </span>
               <Button
                 size="sm"
-                class="font-bold whitespace-nowrap"
+                class="font-bold whitespace-nowrap self-start md:self-auto"
                 type="opposite"
                 :to="{ name: 'index', hash: '#tickets' }"
               >
@@ -34,36 +42,36 @@ definePageMeta({
             <h1 class="mt-0">
               <span class="sr-only"> ETH Kyiv</span>
               <BrandLogoDecorative
-                class="w-full md:w-auto"
+                class="w-full lg:w-630px md:w-auto"
                 alt="ETH Kyiv logo"
               />
             </h1>
-            <div class="lg:w-1/2 mt-4">
+
+            <div
+              class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] sm:bg-transparent sm:dark:bg-transparent"
+            >
               <h2
                 class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
               >
-                Ukrains top community-driven Ethereum event
+                {{ data.title }}
               </h2>
-              <p class="text-sm">
-                Through the hackathon, conference and side events like DayZero,
-                discussions, collaborations, and vast networking, we aim to
-                further establish Kyiv as an innovation and infrastructure
-                development leader.
-              </p>
+              <ContentRenderer :value="data" class="text-sm" />
             </div>
           </div>
 
           <div
-            class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3 grid-auto-rows"
+            class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <kinesis-element :strength="30" class="col-span-2">
-              <BrandPortrait
-                class="absolute hidden lg:block top-0 right-0 transform -translate-y-59 translate-x-10 z-0"
+              <BrandTaras
+                :width="233"
+                :height="254"
+                class="absolute w-30 h-30 md:w-auto md:h-auto top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>
           <div
-            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3 grid-auto-rows"
+            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <Card class="drop-shadow-dec z-10">
               <CardContent>
@@ -72,54 +80,52 @@ definePageMeta({
                     Ukraine’s Premier Ethereum Conference
                   </span>
                 </div>
-
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Contribute
+                  {{ card[0].title }}
                 </h2>
-                <p class="text-sm leading-tight mt-3">
-                  With 1500 attendants, 50 speakers and thousands of online
-                  viewers. This is where Ethereum meets Ukraine, and Kyiv meets
-                  the future.
-                </p>
-                <CardFooter>
+                <ContentRenderer
+                  :value="card[0]"
+                  class="text-sm leading-tight mt-3"
+                />
+                <CardFooter class="self-start md:self-auto">
                   <Button
                     size="lg"
-                    class="font-bold stretched-link whitespace-nowrap"
+                    class="font-bold stretched-link"
                     type="secondary"
-                    :to="{ path: '/', hash: '#speakers' }"
+                    v-bind="app.links.application_speaker"
                   >
-                    Apply to speak
+                    {{ card[0].button }}
+                    <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
               </CardContent>
             </Card>
 
-            <Card class="">
+            <Card>
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
                   <span class="text-secondary-500"> Online</span>
                 </div>
-
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Support
+                  {{ card[1].title }}
                 </h2>
-                <p class="text-sm leading-tight mt-3">
-                  The 3 day Hackathon with more than 200 developers, plus
-                  mentors, judges, speakers & staff.
-                </p>
-                <CardFooter>
+                <ContentRenderer
+                  :value="card[1]"
+                  class="text-sm leading-tight mt-3"
+                />
+                <CardFooter class="self-start md:self-auto">
                   <Button
                     size="lg"
-                    class="font-bold stretched-link self-end whitespace-nowrap"
+                    class="font-bold stretched-link"
                     type="primary"
-                    v-bind="app.links.application_hacker"
+                    v-bind="app.links.application_mentor"
                   >
-                    Mentor | Volunteer
+                    Mentor
                     <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
@@ -157,46 +163,6 @@ definePageMeta({
 <style lang="scss">
 @import '../assets/sass/variables';
 
-html.dark {
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
 @media screen and (max-width: 480px) {
 }
 </style>

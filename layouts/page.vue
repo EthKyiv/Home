@@ -14,7 +14,7 @@
         <kinesis-container>
           <kinesis-element :strength="-10">
             <div
-              class="absolute invisible lg:visible top-0 right-0 transform translate-x-18 translate-y-20 rotate-340 linear-wipe"
+              class="absolute invisible xl:visible top-0 right-0 transform translate-x-18 translate-y-20 rotate-340 linear-wipe"
             >
               <BrandFlowerSm></BrandFlowerSm>
             </div>

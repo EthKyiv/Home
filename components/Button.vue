@@ -27,7 +27,7 @@ const defaultStyle = `
   cursor-pointer
   border border-2 transition-color duration-300 border-gray-900 text-gray-900
   focus:outline-none focus:ring-1 focus:ring-offset-1 focus:dark:ring-offset-gray-50 focus:dark:ring-gray-400 focus:ring-gray-600/[0.6] focus:ring-offset-gray-800/[0.6]
-  flex items-center justify-center font-bold uppercase whitespace-nowrap
+  flex items-center justify-center font-bold uppercase  overflow-hidden whitespace-nowrap
 `
 const styles = reactive<{
   [key: string]: string
