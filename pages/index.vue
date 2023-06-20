@@ -19,11 +19,13 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageBody>
-      <kinesis-container event="scroll">
+     
+
         <PageSection
           id="home"
           class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
         >
+         <kinesis-container event="move">
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
               <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase">
@@ -62,7 +64,7 @@ definePageMeta({
           <div
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
-            <kinesis-element :strength="30" class="col-span-2">
+            <kinesis-element :strength="15" class="col-span-2">
               <BrandTaras
                 :width="233"
                 :height="254"
@@ -102,7 +104,6 @@ definePageMeta({
                 </CardFooter>
               </CardContent>
             </Card>
-
             <Card>
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
@@ -132,8 +133,8 @@ definePageMeta({
               </CardContent>
             </Card>
           </div>
+        </kinesis-container>
         </PageSection>
-      </kinesis-container>
 
       <PageSection
         id="about"
