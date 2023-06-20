@@ -2,6 +2,14 @@
 import { AppConfigInput } from '@nuxt/schema'
 // state
 const app = useAppConfig() as AppConfigInput
+// data
+const { data } = await useAsyncData('home', () =>
+  queryContent('/page/home').findOne()
+)
+const card = await queryContent('page', 'home')
+  .where({ _partial: true, type: { $eq: 'card' } })
+  .find()
+
 // meta
 definePageMeta({
   layout: 'page',
@@ -18,8 +26,8 @@ definePageMeta({
         >
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
-              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
-                >14 - 15 September 2023
+              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase">
+                {{ data.date }}
               </span>
               <Button
                 size="sm"
@@ -42,14 +50,9 @@ definePageMeta({
               <h2
                 class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
               >
-                Ukrains top community-driven Ethereum event
+                <h1>{{ data.title }}</h1>
               </h2>
-              <p class="text-sm">
-                Through the hackathon, conference and side events like DayZero,
-                discussions, collaborations, and vast networking, we aim to
-                further establish Kyiv as an innovation and infrastructure
-                development leader.
-              </p>
+              <ContentRenderer :value="data" class="text-sm" />
             </div>
           </div>
 
@@ -57,8 +60,10 @@ definePageMeta({
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-2/3 grid-auto-rows"
           >
             <kinesis-element :strength="30" class="col-span-2">
-              <BrandPortrait
-                class="absolute hidden lg:block top-0 right-0 transform -translate-y-59 translate-x-10 z-0"
+              <BrandTaras
+                width="233"
+                height="254"
+                class="absolute hidden lg:block top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>
@@ -72,17 +77,15 @@ definePageMeta({
                     Ukraine’s Premier Ethereum Conference
                   </span>
                 </div>
-
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Contribute
+                  {{ card[0].title }}
                 </h2>
-                <p class="text-sm leading-tight mt-3">
-                  With 1500 attendants, 50 speakers and thousands of online
-                  viewers. This is where Ethereum meets Ukraine, and Kyiv meets
-                  the future.
-                </p>
+                <ContentRenderer
+                  :value="card[0]"
+                  class="text-sm leading-tight mt-3"
+                />
                 <CardFooter>
                   <Button
                     size="lg"
@@ -90,7 +93,7 @@ definePageMeta({
                     type="secondary"
                     :to="{ path: '/', hash: '#speakers' }"
                   >
-                    Apply to speak
+                  {{ card[0].button }}
                   </Button>
                 </CardFooter>
               </CardContent>
@@ -102,16 +105,15 @@ definePageMeta({
                   <span class="text-primary-500">Kyiv</span> |
                   <span class="text-secondary-500"> Online</span>
                 </div>
-
                 <h2
                   class="text-primary-500 uppercase font-bold text-4xl md:text-5xl"
                 >
-                  Support
+                  {{ card[1].title }}
                 </h2>
-                <p class="text-sm leading-tight mt-3">
-                  The 3 day Hackathon with more than 200 developers, plus
-                  mentors, judges, speakers & staff.
-                </p>
+                <ContentRenderer
+                  :value="card[1]"
+                  class="text-sm leading-tight mt-3"
+                />
                 <CardFooter>
                   <Button
                     size="lg"
@@ -119,7 +121,7 @@ definePageMeta({
                     type="primary"
                     v-bind="app.links.application_hacker"
                   >
-                    Mentor | Volunteer
+                  {{ card[1].button }}
                     <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
@@ -156,47 +158,6 @@ definePageMeta({
 
 <style lang="scss">
 @import '../assets/sass/variables';
-
-html.dark {
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
 @media screen and (max-width: 480px) {
 }
 </style>
