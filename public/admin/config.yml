@@ -1,17 +1,50 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: "assets/images/uploads"
-
+media_folder: static/img
+public_folder: /img
+local_backend: true
 collections:
-  - name: "post" # Used in routes, e.g., /admin/collections/blog
-    label: "Posts" # Used in the UI
-    folder: "content/post" # The path to the folder where the documents are stored
+  - name: "partner" # Used in routes, e.g., /admin/collections/blog
+    label: "Partners" # Used in the UI
+    label_singular: "Partner"
+    folder: "content/partners" # The path to the folder where the documents are stored
+    format: "frontmatter"
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: name
+    editor:
+      preview: false
+    view_groups:
+    - label: Partner type
+      field: type
+    - label: Visible
+      field: hidden
+
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: true}
+      - { label: "Partner name", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - {
+          label: "Partner type",
+          name: "type",
+          widget: "relation",
+          collection: 'partner-type',
+          search_fields: ["title"],
+          display_fields:  ["title"],
+          value_field: 'id'
+        }
+      - { label: "URL", name: "url", widget: "string", hint: "A link to website or social media profile", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+  - name: "partner-type" # Used in routes, e.g., /admin/collections/blog
+    label: "Partner types" # Used in the UI
+    label_singular: "Partner type"
+    hide: true
+    folder: "content/partners-types" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - { label: "Type name", name: "title", widget: "string" }
+      - { label: "Type id", name: "id", widget: "string", hidden: true }
+      - { label: "Order", name: "order", widget: "number" }
