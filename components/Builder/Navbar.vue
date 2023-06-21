@@ -94,13 +94,11 @@ const toggleOptions = (show?: boolean) => {
               </span>
             </NuxtLink>
           </slot>
+          <slot name="pre-menu" />
           <!-- menu -->
           <slot name="menu" />
           <!-- options:toggle -->
-          <div
-            v-if="$slots['options']"
-            class="flex-1 flex justify-end lg:hidden"
-          >
+          <div v-if="$slots['options']" class="ml-6 flex justify-end lg:hidden">
             <button
               class="flex items-center focus:outline-none"
               aria-label="Toggle Options Menu"

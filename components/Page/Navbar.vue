@@ -28,9 +28,17 @@ const menus = computed((): IMenuItem[] => [
     text: 'FAQ',
     route: { hash: '#FAQ' },
   },
+  {
+    type: 'link',
+    text: 'Media',
+    route: { path: '/media' },
+  },
   route.name === 'hackathon' ? mainButton : hackButton,
   // { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
 ])
+const dynamicButton = computed((): IMenuItem => {
+  return route.name === 'hackathon' ? mainButton : hackButton
+})
 </script>
 
 <template>
@@ -44,8 +52,19 @@ const menus = computed((): IMenuItem[] => [
         </span>
       </div>
     </template> -->
+    <template #pre-menu>
+      <div class="relative items-center ml-auto lg:hidden">
+        <Button
+          :text="dynamicButton.text"
+          size="sm"
+          class="min-w-36"
+          :to="dynamicButton.route ? dynamicButton.route : undefined"
+          type="transparent"
+        />
+      </div>
+    </template>
     <template #menu>
-      <div class="relative hidden lg:flex items-center ml-auto">
+      <div class="relative hidden lg:flex items-center lg:ml-auto">
         <nav
           class="text-sm leading-6 font-semibold text-gray-900"
           role="navigation"
