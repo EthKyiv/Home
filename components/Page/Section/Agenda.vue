@@ -5,7 +5,7 @@ const app = useAppConfig() as AppConfigInput
 <template>
   <PageSection
     id="agenda"
-    class="flex-1 flex flex-col items-start justify-center mt-10 transition-opacity duration-300 ease-in-out opacity-30 hover:opacity-100"
+    class="flex-1 flex flex-col items-start justify-center mt-10"
   >
     <h2 class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl">
       Agenda

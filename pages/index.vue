@@ -19,13 +19,11 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageBody>
-     
-
-        <PageSection
-          id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
-        >
-         <kinesis-container event="move">
+      <PageSection
+        id="home"
+        class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
+      >
+        <kinesis-container event="move">
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6">
               <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase">
@@ -124,9 +122,9 @@ definePageMeta({
                     size="lg"
                     class="font-bold stretched-link"
                     type="primary"
-                    v-bind="app.links.application_mentor"
+                    v-bind="app.links.application_volunteer"
                   >
-                    Mentor
+                    {{ card[1].button }}
                     <IconMdi:open-in-new class="text-sm ml-3" />
                   </Button>
                 </CardFooter>
@@ -134,7 +132,7 @@ definePageMeta({
             </Card>
           </div>
         </kinesis-container>
-        </PageSection>
+      </PageSection>
 
       <PageSection
         id="about"
