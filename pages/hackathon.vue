@@ -21,10 +21,10 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageBody>
-        <PageSection
-          id="home"
-          class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
-        >
+      <PageSection
+        id="home"
+        class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
+      >
         <kinesis-container event="move">
           <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
             <div class="flex flex-col-reverse md:flex-row gap-6 m">
@@ -68,7 +68,7 @@ definePageMeta({
           <div
             class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
-            <Card class="mb-4 drop-shadow-dec">
+            <Card class="drop-shadow-dec z-10">
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
@@ -98,7 +98,7 @@ definePageMeta({
                 </CardFooter>
               </CardContent>
             </Card>
-            <Card >
+            <Card>
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
@@ -120,7 +120,7 @@ definePageMeta({
                     class="font-bold stretched-link"
                     type="secondary"
                     target="_blank"
-                    v-bind="app.links.application_volunteer"
+                    v-bind="app.links.application_mentor"
                   >
                     {{ card[1].button }}
                     <IconMdi:open-in-new class="text-sm ml-3" />
@@ -129,14 +129,14 @@ definePageMeta({
                 </CardFooter>
               </CardContent>
             </Card>
-            </div>
-          </kinesis-container>
-        </PageSection>
+          </div>
+        </kinesis-container>
+      </PageSection>
 
-        <PageSectionBounties></PageSectionBounties>
-        <PageSectionAgenda></PageSectionAgenda>
-        <PageSectionPartners></PageSectionPartners>
-        <PageSectionFAQ></PageSectionFAQ>
+      <PageSectionBounties></PageSectionBounties>
+      <PageSectionAgenda></PageSectionAgenda>
+      <PageSectionPartners></PageSectionPartners>
+      <PageSectionFAQ></PageSectionFAQ>
     </PageBody>
   </PageWrapper>
 </template>
