@@ -8,7 +8,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
-    'IconMdi:discord': typeof import('~icons/mdi/discord')['default']
     'IconMdi:ethereum': typeof import('~icons/mdi/ethereum')['default']
     'IconMdi:linkBoxVariant': typeof import('~icons/mdi/link-box-variant')['default']
     'IconMdi:openInNew': typeof import('~icons/mdi/open-in-new')['default']

@@ -12,6 +12,9 @@ const app = useAppConfig() as AppConfigInput
 useHead({
   title: app.name,
   titleTemplate: '%s 2023 Hackathon & Conference',
+  script: [
+    { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
+  ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
