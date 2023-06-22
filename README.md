@@ -1,3 +1,7 @@
+4Horizons — Today at 15:47
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aabda35d-507c-4ae5-ba63-37510489f56e/deploy-status)](https://app.netlify.com/sites/dayzero/deploys)
+
+
 # Based on boilerplate from [Nuxt 3 Awesome Starter](https://github.com/viandwi24/nuxt3-awesome-starter)
 Nuxt 3 starter template or boilerplate with a lot of useful features. and integrated with TailwindCSS 3.  
 

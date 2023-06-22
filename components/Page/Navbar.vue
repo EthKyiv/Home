@@ -28,9 +28,17 @@ const menus = computed((): IMenuItem[] => [
     text: 'FAQ',
     route: { hash: '#FAQ' },
   },
+  {
+    type: 'link',
+    text: 'Media',
+    route: { path: '/media' },
+  },
   route.name === 'hackathon' ? mainButton : hackButton,
   // { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
 ])
+const dynamicButton = computed((): IMenuItem => {
+  return route.name === 'hackathon' ? mainButton : hackButton
+})
 </script>
 
 <template>
@@ -44,8 +52,19 @@ const menus = computed((): IMenuItem[] => [
         </span>
       </div>
     </template> -->
+    <template #pre-menu>
+      <div class="relative items-center ml-auto lg:hidden">
+        <Button
+          :text="dynamicButton.text"
+          size="sm"
+          class="min-w-36"
+          :to="dynamicButton.route ? dynamicButton.route : undefined"
+          type="transparent"
+        />
+      </div>
+    </template>
     <template #menu>
-      <div class="relative hidden lg:flex items-center ml-auto">
+      <div class="relative hidden lg:flex items-center lg:ml-auto">
         <nav
           class="text-sm leading-6 font-semibold text-gray-900"
           role="navigation"
@@ -94,16 +113,25 @@ const menus = computed((): IMenuItem[] => [
     <template #options="{ toggleOptions }">
       <ActionSheet @on-close="toggleOptions(false)">
         <ActionSheetBody>
-          <ActionSheetHeader text="Menu" />
-          <nav class="leading-6 text-gray-900 dark:text-slate-400">
-            <ul class="flex flex-col">
+          <ActionSheetHeader>
+            <Button
+              type="transparent"
+              size="sm"
+              area-lable="Close"
+              class="border-0"
+              @click.prevent="toggleOptions(false)"
+            >
+              Close <IconMdi:close class="ml-3" />
+            </Button>
+          </ActionSheetHeader>
+          <nav class="leading-6 text-gray-900">
+            <ul class="flex flex-col-reverse">
               <li
                 v-for="(item, i) in menus"
                 :key="i"
                 class="flex w-full"
                 :class="{
-                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-slate-400/[0.4]':
-                    item.type === 'link',
+                  'pb-2 mb-2 border-b border-gray-900/10': item.type === 'link',
                 }"
               >
                 <Anchor
@@ -116,9 +144,9 @@ const menus = computed((): IMenuItem[] => [
                 <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"
-                  size="sm"
+                  size="md"
                   type="secondary"
-                  class="flex-1"
+                  class="flex-1 my-2 self-center"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                 />
@@ -126,12 +154,32 @@ const menus = computed((): IMenuItem[] => [
             </ul>
           </nav>
         </ActionSheetBody>
-        <Button
-          text="Close"
-          type="transparent"
-          @click.prevent="toggleOptions(false)"
-        />
       </ActionSheet>
+    </template>
+    <template #app-after-options="{ toggleOptions, show }">
+      <div class="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 z-100">
+        <Button
+          text="Join us on Discord"
+          type="secondary"
+          size="sm"
+          v-bind="app.links.discord"
+          class="hidden lg:flex rounded-full h-10"
+        >
+          Join us <IconMdi:discord class="ml-3 text-base" />
+        </Button>
+        <Button
+          type="secondary"
+          size="sm"
+          aria-lable="toggle navigation"
+          class="w-12 h-12 p-0 rounded-full visible lg:hidden"
+          @click.prevent="toggleOptions(false)"
+        >
+          <span class="text-lg">
+            <IconMdi:dots-vertical v-if="!show" />
+            <IconMdi:close v-else />
+          </span>
+        </Button>
+      </div>
     </template>
   </BuilderNavbar>
 </template>

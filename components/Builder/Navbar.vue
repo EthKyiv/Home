@@ -51,7 +51,7 @@ const toggleOptions = (show?: boolean) => {
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md py-2 top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-800 dark:border-slate-300/[0.2] bg-ugradient"
+    class="py-2 top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-800 dark:border-slate-300/[0.2] bg-ugradient"
   >
     <div id="navbar-banner" class="banner">
       <slot name="banner" />
@@ -94,13 +94,11 @@ const toggleOptions = (show?: boolean) => {
               </span>
             </NuxtLink>
           </slot>
+          <slot name="pre-menu" />
           <!-- menu -->
           <slot name="menu" />
           <!-- options:toggle -->
-          <div
-            v-if="$slots['options']"
-            class="flex-1 flex justify-end lg:hidden"
-          >
+          <div v-if="$slots['options']" class="ml-6 flex justify-end lg:hidden">
             <button
               class="flex items-center focus:outline-none"
               aria-label="Toggle Options Menu"
@@ -117,7 +115,15 @@ const toggleOptions = (show?: boolean) => {
         </div>
       </div>
     </div>
+
     <ClientOnly>
+      <Teleport to="#app-before">
+        <slot
+          name="app-after-options"
+          :toggle-options="toggleOptions"
+          :show="showOptions"
+        />
+      </Teleport>
       <Teleport to="#app-after">
         <!-- drawer -->
         <Transition name="slide-fade-from-up" mode="out-in">
