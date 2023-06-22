@@ -9,7 +9,7 @@ const { data } = await useAsyncData('hackathon', () =>
   queryContent('/page/hackathon').findOne()
 )
 const { data: card } = await useAsyncData('hackathon_partials', () =>
-  queryContent('/page/home')
+  queryContent('/page/hackathon')
     .where({ _partial: true, type: { $eq: 'card' } })
     .find()
 )

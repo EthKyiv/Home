@@ -14,12 +14,12 @@ const route = useRoute()
 const hackButton: IMenuItem = {
   type: 'button',
   text: 'Hack',
-  route: { path: '/hackathon' },
+  route: { name: 'hackathon' },
 }
 const mainButton: IMenuItem = {
   type: 'button',
   text: 'Conference',
-  route: { path: '/' },
+  route: { name: 'index' },
 }
 
 const menus = computed((): IMenuItem[] => [
@@ -31,7 +31,7 @@ const menus = computed((): IMenuItem[] => [
   {
     type: 'link',
     text: 'Media',
-    route: { path: '/media' },
+    route: { name: 'media' },
   },
   route.name === 'hackathon' ? mainButton : hackButton,
   // { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
