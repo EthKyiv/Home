@@ -70,7 +70,7 @@ definePageMeta({
           <div
             class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
-            <Card class="drop-shadow-dec z-10">
+            <Card v-if="card[0]"  class="drop-shadow-dec z-10">
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
@@ -100,7 +100,7 @@ definePageMeta({
                 </CardFooter>
               </CardContent>
             </Card>
-            <Card>
+            <Card v-if="card[1]" >
               <CardContent>
                 <div class="uppercase font-bold text-gray-300">
                   <span class="text-primary-500">Kyiv</span> |
