@@ -8,9 +8,11 @@ const app = useAppConfig() as AppConfigInput
 const { data } = await useAsyncData('hackathon', () =>
   queryContent('/page/hackathon').findOne()
 )
-const card = await queryContent('page', 'hackathon')
-  .where({ _partial: true, type: { $eq: 'card' } })
-  .find()
+const { data: card } = await useAsyncData('hackathon_partials', () =>
+  queryContent('/page/home')
+    .where({ _partial: true, type: { $eq: 'card' } })
+    .find()
+)
 
 // meta
 definePageMeta({
