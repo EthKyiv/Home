@@ -146,11 +146,16 @@ definePageMeta({
         >
           DayZero
         </h2>
-        <div
-          class="grid md:grid-cols-2 lg:grid-cols-6 gap-4 w-full mb-8 mt-4 bg-white/[0.8] border-black"
-        >
-          <div class="col-span-3">
-            <BrandLogo class="text-white" />
+        <div class="mt-10 ml-auto grid grid-cols-2 gap-16">
+          <div class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            debitis nesciunt repellendus, adipisci cupiditate dolor rerum, ullam
+            accusantium recusandae iure commodi doloremque quaerat error minima
+            nam ipsam pariatur vel deserunt!
+            <BrandLogoDimond class="text-white pt-20 pl-20 h-70 w-auto" />
+          </div>
+          <div class="bg-gray-100 aspect-video">
+            <!-- <BrandLogoDimond class="text-white  w-auto " /> -->
           </div>
         </div>
       </PageSection>
