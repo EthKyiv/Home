@@ -21,6 +21,7 @@ definePageMeta({
       </PageSection>
     </PageBody>
   </PageWrapper>
+  <PageSectionFAQ></PageSectionFAQ>
 </template>
 
 <style lang="scss">
