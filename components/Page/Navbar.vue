@@ -90,23 +90,8 @@ const dynamicButton = computed((): IMenuItem => {
             </li>
           </ul>
         </nav>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
-          <Anchor
-            class="hover:no-underline text-gray-900 hover:dark:text-black text-lg flex self-center items-center"
-            v-bind="app.links.linktree"
-            target="_blank"
-          >
-            <IconMdi:link-box-variant />
-          </Anchor>
-          <Anchor
-            class="hover:no-underline text-gray-900 hover:dark:text-black text-lg flex self-center items-center"
-            v-bind="app.links.twitter"
-            target="_blank"
-          >
-            <IconMdi:twitter-box />
-          </Anchor>
+        <div class="border-l ml-6 pl-6 border-gray-900/10">
+          <PageSocialLinks />
         </div>
       </div>
     </template>
@@ -152,6 +137,7 @@ const dynamicButton = computed((): IMenuItem => {
                 />
               </li>
             </ul>
+            <PageSocialLinks />
           </nav>
         </ActionSheetBody>
       </ActionSheet>
@@ -165,7 +151,8 @@ const dynamicButton = computed((): IMenuItem => {
           v-bind="app.links.discord"
           class="hidden lg:flex rounded-full h-10"
         >
-          Join us <IconMdi:discord class="ml-3 text-base" />
+          Join us
+          <IconLineMd:discord-twotone class="text-purple ml-3 text-xl" />
         </Button>
         <Button
           type="secondary"

@@ -8,6 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
+    'IconIconoir:medium': typeof import('~icons/iconoir/medium')['default']
+    'IconLineMd:discordTwotone': typeof import('~icons/line-md/discord-twotone')['default']
     'IconMdi:close': typeof import('~icons/mdi/close')['default']
     'IconMdi:decagramOutline': typeof import('~icons/mdi/decagram-outline')['default']
     'IconMdi:discord': typeof import('~icons/mdi/discord')['default']
@@ -23,6 +25,10 @@ declare module '@vue/runtime-core' {
     'IconMdi:triangle': typeof import('~icons/mdi/triangle')['default']
     'IconMdi:twitter': typeof import('~icons/mdi/twitter')['default']
     'IconMdi:twitterBox': typeof import('~icons/mdi/twitter-box')['default']
+    'IconOpenmoji:instagram': typeof import('~icons/openmoji/instagram')['default']
+    'IconOpenmoji:link': typeof import('~icons/openmoji/link')['default']
+    'IconOpenmoji:twitter': typeof import('~icons/openmoji/twitter')['default']
+    'IconOpenmoji:youtube': typeof import('~icons/openmoji/youtube')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']
     'IconUil:apps': typeof import('~icons/uil/apps')['default']
     'IconUil:bars': typeof import('~icons/uil/bars')['default']
