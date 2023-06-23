@@ -29,6 +29,7 @@ declare module '@vue/runtime-core' {
     'IconOpenmoji:link': typeof import('~icons/openmoji/link')['default']
     'IconOpenmoji:twitter': typeof import('~icons/openmoji/twitter')['default']
     'IconOpenmoji:youtube': typeof import('~icons/openmoji/youtube')['default']
+    'IconTeenyicons:legoOutline': typeof import('~icons/teenyicons/lego-outline')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']
     'IconUil:apps': typeof import('~icons/uil/apps')['default']
     'IconUil:bars': typeof import('~icons/uil/bars')['default']
