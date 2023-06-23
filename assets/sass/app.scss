@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 
 // vars
@@ -37,6 +37,9 @@ html.dark {
 
 // animations
 @import 'animations/transitions';
+html {
+  overflow-y: scroll;
+}
 
 body {
   font-size: 1rem;
@@ -50,6 +53,16 @@ body {
 html.dark {
   .drop-shadow-dec {
     box-shadow: 4px 5px 0px 0px rgba(74, 203, 197, 0.636);
+  }
+}
+
+.drop-shadow-dec-gray {
+  box-shadow: 4px 5px 0px 0px   theme('colors.gray.800');
+}
+
+html.dark {
+  .drop-shadow-dec-gray {
+    box-shadow: 4px 5px 0px 0px theme('colors.slate.300');
   }
 }
 
@@ -91,5 +104,7 @@ html.dark {
 .h-inherit {
   height: inherit;
 }
+
+
 
 
