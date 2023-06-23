@@ -88,7 +88,7 @@ const toggleOptions = (show?: boolean) => {
               <span class="sr-only">home</span>
               <span class="flex items-center">
                 <BrandLogo
-                  class="inline-block mr-2 text-lg h-8 w-36 text-black"
+                  class="inline-block mr-2 text-lg h-9 w-30 text-black"
                   :alt="app.name"
                 />
               </span>
