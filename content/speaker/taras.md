@@ -1,7 +1,9 @@
 ---
-name: Taras
+name: Fearless Leader
 title: Our hero
 img: /img/head.svg
-highlight: false
-order: 3
+twitter: twitter.com/futurvisions
+url: instagram.com/me
+highlight: true
+order: 3000
 ---
