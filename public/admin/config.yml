@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: static/img
+media_folder: public/img
 public_folder: /img
 local_backend: true
 collections:
@@ -35,16 +35,35 @@ collections:
         }
       - { label: "URL", name: "url", widget: "string", hint: "A link to website or social media profile", required: false }
       - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}
   - name: "partner-type" # Used in routes, e.g., /admin/collections/blog
     label: "Partner types" # Used in the UI
     label_singular: "Partner type"
     hide: true
     folder: "content/partners-types" # The path to the folder where the documents are stored
     format: "frontmatter"
-    create: true # Allow users to create new documents in this collection
+    create: false # Allow users to create new documents in this collection
     editor:
       preview: false
     fields: # The fields for each document, usually in front matter
       - { label: "Type name", name: "title", widget: "string" }
       - { label: "Type id", name: "id", widget: "string", hidden: true }
       - { label: "Order", name: "order", widget: "number" }
+  - name: "speakers" # Used in routes, e.g., /admin/collections/blog
+    label: "Speakers" # Used in the UI
+    label_singular: "Speaker"
+    hide: false
+    folder: "content/speaker" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    identifier_field: name
+    fields: # The fields for each document, usually in front matter
+      - { label: "Speaker name", name: "name", widget: "string" }
+      - { label: "Speaker job/title", name: "title", widget: "string", required: false  }
+      - { label: "Profile picture", name: "img", widget: "image", required: false  }
+      - { label: "Twitter url", name: "twitter", widget: "string" , required: false }
+      - { label: "Link", name: "url", widget: "string", hint: "link to company or persona website ", required: false  }
+      - { label: "Highlight", name: "highlight", widget: "boolean", default: false, hint: "Add a drop shadow to highlight a speaker"}
+      - { label: "Order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}

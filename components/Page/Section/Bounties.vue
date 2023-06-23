@@ -3,13 +3,8 @@ import { AppConfigInput } from '@nuxt/schema'
 const app = useAppConfig() as AppConfigInput
 </script>
 <template>
-  <PageSection
-    id="bounties"
-    class="flex-1 flex flex-col items-start justify-center mt-10"
-  >
-    <h2 class="text-gray-800 dark:text-slate-300 font-bold capitalize text-3xl">
-      Bounties
-    </h2>
+  <PageSection id="bounties">
+    <h2 class="section-title">Bounties</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-4 mt-4">
       <Card class="mb-4 bg-yellow-200">
         <CardContent>

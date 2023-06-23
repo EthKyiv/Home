@@ -13,7 +13,11 @@ export default defineNuxtConfig({
   },
 
   // css
-  css: ['~/assets/sass/vendor.scss', '~/assets/sass/app.scss'],
+  css: [
+    '~/assets/sass/vendor.scss',
+    '~/assets/sass/app.scss',
+    '~/assets/sass/_section.scss',
+  ],
 
   // plugins
   plugins: ['~/plugins/navbar.ts'],
@@ -32,6 +36,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-windicss',
     '@vite-pwa/nuxt',
+    '@nuxtjs/google-fonts',
   ],
 
   // experimental features
@@ -148,6 +153,13 @@ export default defineNuxtConfig({
       suppressWarnings: true,
       navigateFallbackAllowlist: [/^\/$/],
       type: 'module',
+    },
+  },
+
+  googleFonts: {
+    display: 'block',
+    families: {
+      Montserrat: [400, 500, 700],
     },
   },
 })

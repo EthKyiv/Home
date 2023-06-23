@@ -5,24 +5,99 @@ const app = useAppConfig() as AppConfigInput
 </script>
 
 <template>
-  <footer class="border-t lg:border-gray-900/10 dark:border-green-400/[0.4]">
-    <section
-      class="max-w-8xl mx-auto px-4 lg:px-8 flex-1 flex w-full space-x-20"
-    >
-      <div class="w-full py-4 text-center md:text-left">
-        <!-- <div class="mb-1">
-          {{ app.name }}
-        </div> -->
-        <div class="text-xs text-gray-600 dark:text-slate-700">
-          Copyright © 2022 . All rights reserved.
-          <div
-            class="flex flex-col md:flex-row space-x-2 items-center md:float-right"
+  <footer
+    class="border-t lg:border-gray-900/10 dark:border-green-400/[0.4] bg-ugradient text-slate-900 pt-8"
+  >
+    <section class="max-w-8xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div class="">
+          <NuxtLink
+            tag="a"
+            class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-black"
+            :to="{ name: 'index' }"
           >
-            <!-- <span class="text-center md:text-right">
-              Base on theme by
-              <a :href="app.author.link">{{ app.author.name }}</a>
-            </span> -->
+            <span class="sr-only">home</span>
+            <span class="flex items-center">
+              <BrandLogo
+                class="inline-block mr-2 text-lg h-auto w-45 text-black"
+                :alt="app.name"
+              />
+            </span>
+          </NuxtLink>
+          <p class="max-w-xs mt-4 text-sm text-gray-800">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            accusantium.
+          </p>
+          <div class="flex mt-8 space-x-6 text-gray-800">
+            <PageSocialLinks lg />
           </div>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <div class="">
+            <p class="font-bold">About</p>
+            <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
+              <a class="hover:opacity-75" href> Privacy Policy </a>
+              <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
+              <a class="hover:opacity-75" href> Accessibility </a>
+            </nav>
+          </div>
+          <div class="">
+            <p class="font-bold">Apply</p>
+            <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
+              <Anchor
+                class="hover:no-underline hover:opacity-75"
+                v-bind="app.links.application_hacker"
+                target="_blank"
+              >
+                Hacker
+              </Anchor>
+              <Anchor
+                class="hover:no-underline hover:opacity-75"
+                v-bind="app.links.application_speaker"
+                target="_blank"
+              >
+                Speaker
+              </Anchor>
+              <Anchor
+                class="hover:no-underline hover:opacity-75"
+                v-bind="app.links.application_mentor"
+                target="_blank"
+              >
+                Mentor
+              </Anchor>
+              <Anchor
+                class="hover:no-underline hover:opacity-75"
+                v-bind="app.links.application_volunteer"
+                target="_blank"
+              >
+                Volunteer
+              </Anchor>
+              <Anchor
+                class="hover:no-underline hover:opacity-75"
+                v-bind="app.links.application_media"
+                target="_blank"
+              >
+                Media
+              </Anchor>
+            </nav>
+          </div>
+          <div class="">
+            <p class="font-bold">Helpful Links</p>
+            <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
+              <a class="hover:opacity-75" href> Contact </a>
+              <a class="hover:opacity-75" href> FAQs </a>
+              <a class="hover:opacity-75" href> Hacker Manual </a>
+              <a class="hover:opacity-75" href> Sponsor Manual </a>
+              <a class="hover:opacity-75" href> Media Page</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="w-full py-4 text-center md:text-left b">
+        <div class="text-xs text-gray-800 dark:text-slate-700">
+          {{ app.name }} © 2022 . All rights reserved.
         </div>
       </div>
     </section>

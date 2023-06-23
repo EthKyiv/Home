@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-  text: {
+  title: {
     type: String,
     default: '',
   },
@@ -8,7 +8,15 @@ defineProps({
 </script>
 
 <template>
-  <div class="text-2xl font-semibold mb-2">
-    <slot>{{ text }}</slot>
+  <div class="section-intro-wrapper">
+    <slot name="before"></slot>
+    <h2 class="section-title">
+      <slot name="title">{{ title }}</slot>
+    </h2>
+    <div class="section-intro">
+      <div class="section-intro-body">
+        <slot></slot>
+      </div>
+    </div>
   </div>
 </template>
