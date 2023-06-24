@@ -11,7 +11,7 @@ const app = useAppConfig() as AppConfigInput
 
 useHead({
   title: app.name,
-  titleTemplate: '%s 2023 Hackathon & Conference',
+  titleTemplate: '%s Hackathon & Conference',
   script: [
     { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
   ],
@@ -82,7 +82,7 @@ useHead({
     ></PageBgFeature>
 
     <Body
-      class="antialiased duration-300 transition-colors text-gray-800 dark:text-slate-400 bg-white dark:bg-slate-900 overscroll-y-none"
+      class="antialiased duration-300 transition-colors text-gray-800 dark:text-slate-400 bg-white dark:bg-slate-900 overflow-clip"
     >
       <NuxtLayout>
         <NuxtPage />

@@ -3,9 +3,6 @@ import { AppConfigInput } from '@nuxt/schema'
 // state
 const app = useAppConfig() as AppConfigInput
 // data
-const { data } = await useAsyncData('home', () =>
-  queryContent('/page/home').findOne()
-)
 
 const { data: card } = await useAsyncData('home_partials', () =>
   queryContent('/page/home')
@@ -15,7 +12,7 @@ const { data: card } = await useAsyncData('home_partials', () =>
 
 // meta
 definePageMeta({
-  layout: 'page',
+  layout: 'page-front',
 })
 </script>
 
@@ -27,41 +24,44 @@ definePageMeta({
         class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
       >
         <kinesis-container event="move">
-          <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
-            <div class="flex flex-col-reverse md:flex-row gap-6">
-              <span class="text-xl md:text-2xl lg:text-3xl font-bold uppercase">
-                {{ data.date }}
-              </span>
-              <Button
-                size="sm"
-                class="font-bold whitespace-nowrap self-start md:self-auto"
-                type="opposite"
-                :to="{ name: 'index', hash: '#tickets' }"
+          <ContentDoc v-slot="{ doc }" path="page/">
+            <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
+              <div class="flex flex-col-reverse md:flex-row gap-6">
+                <span
+                  class="text-xl md:text-2xl lg:text-3xl font-bold uppercase"
+                >
+                  {{ doc.date }}
+                </span>
+                <Button
+                  size="sm"
+                  class="font-bold whitespace-nowrap self-start md:self-auto"
+                  type="opposite"
+                  :to="{ name: 'index', hash: '#tickets' }"
+                >
+                  Register
+                </Button>
+              </div>
+
+              <h1 class="mt-0">
+                <span class="sr-only"> {{ doc.title }} </span>
+                <BrandLogoDecorative
+                  class="w-full lg:w-630px md:w-auto"
+                  alt="ETH Kyiv logo"
+                />
+              </h1>
+
+              <div
+                class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] sm:bg-transparent sm:dark:bg-transparent"
               >
-                Register
-              </Button>
+                <h2
+                  class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
+                >
+                  {{ doc.subtitle }}
+                </h2>
+                <ContentRenderer :value="doc" class="text-sm" />
+              </div>
             </div>
-
-            <h1 class="mt-0">
-              <span class="sr-only"> ETH Kyiv</span>
-              <BrandLogoDecorative
-                class="w-full lg:w-630px md:w-auto"
-                alt="ETH Kyiv logo"
-              />
-            </h1>
-
-            <div
-              class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] sm:bg-transparent sm:dark:bg-transparent"
-            >
-              <h2
-                class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
-              >
-                {{ data.title }}
-              </h2>
-              <ContentRenderer :value="data" class="text-sm" />
-            </div>
-          </div>
-
+          </ContentDoc>
           <div
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >

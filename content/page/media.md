@@ -1,13 +1,29 @@
 ---
-title: Media
-button: "become a media partner"
+title: Media # this
+date: "14 - 15 September 2023"
+#SEO settings
+description: 'Ukrains Premier Ethereum Conference and Hackathon'
+head:
+  title: Media ETHKyiv 2023 #this page uses different title to render in meta tags/ as page name
+  meta:
+    - name: 'keywords'
+      content: 'conference , hackathon, Kyiv'
+    - name: 'robots'
+      content: 'index, follow'
+#image:
+#  src: '/assets/social-card.png'
+#  alt: 'An image showcasing My Page.'
+#  width: 400
+#  height: 300
 ---
 
-# Adsumus contremuit prodere cauda
+
 Addidit venabula, siquid **quaerit me adspergine** manuque; proripit vidisse
 clausit, si Persea ferarum. **Ante regna** honoratas sacra restat origo; sed
 verba nubibus mihique Orphei, **quicumque noverit** adicis nivea profeci? Magno
 curvantem tulisse rursus, id, fessa fata.
+
+[![Watch the video](/img/videocover_img.png)](https://www.youtube.com/watch?v=ATAthUup3TA){:target="_blank"}
 
 ## H2 plenum differt
 Lorem markdownum Iovis quoque faeno, levatus vilior adamanteis draconis pervenit
