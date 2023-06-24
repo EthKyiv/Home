@@ -20,7 +20,7 @@ defineProps({
         class="flex flex-col justify-between items-start w-full text-left text-gray-800 dark:text-slate-400 hover:text-blue-500 transition-colors duration-200 font-bold text-lg"
       >
         <div class="flex justify-between w-full">
-          <span>{{ data.title }}</span>
+          <span class="pr-10">{{ data.title }}</span>
           <IconMdi:triangle
             :class="[
               open ? 'rotate-180 ' : 'rotate-90',
