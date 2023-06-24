@@ -12,7 +12,7 @@ const { data: card } = await useAsyncData('hackathon_partials', () =>
 
 // meta
 definePageMeta({
-  layout: 'page',
+  layout: 'page-front',
 })
 </script>
 
