@@ -105,6 +105,12 @@ html.dark {
   height: inherit;
 }
 
+.prose {
+  h2 a, h3 a, h4 a, h5 a {
+    @apply no-underline hover:text-primary-500 text-gray-800 dark:text-slate-300 font-bold capitalize;
+  }
+}
+
 
 
 
