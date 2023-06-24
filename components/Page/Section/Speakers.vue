@@ -6,7 +6,9 @@ const app = useAppConfig() as AppConfigInput
   <PageSection id="speakers">
     <PageSectionTitle title="Confirmed speakers">
       <template #before>
-        <BrandSkyline class="h-48 w-auto text-gray-500 mb-4" />
+        <BrandSkyline
+          class="h-48 w-auto text-gray-500 md:mb-2 lg:mb-4 max-w-80vw"
+        />
       </template>
       <p>
         We have an amazing speaker line up waiting for you in Kyiv that is

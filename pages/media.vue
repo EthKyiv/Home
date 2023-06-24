@@ -2,8 +2,6 @@
 import { AppConfigInput } from '@nuxt/schema'
 // state
 const app = useAppConfig() as AppConfigInput
-// data
-
 // meta
 definePageMeta({
   layout: 'page',
@@ -17,7 +15,15 @@ definePageMeta({
         id="home"
         class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
       >
-        <ContentDoc path="page/media" class="prose" />
+        <ContentDoc v-slot="{ doc }" path="page/media">
+          <h1 class="text-primary-500 uppercase font-bold text-4xl md:text-5xl">
+            {{ doc.title }}
+          </h1>
+          <ContentRenderer
+            :value="doc"
+            class="prose prose-primary mt-4 xl:max-w-2/3"
+          />
+        </ContentDoc>
       </PageSection>
     </PageBody>
   </PageWrapper>

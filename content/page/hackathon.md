@@ -1,0 +1,19 @@
+---
+title: Hackathon ETHKyiv 14-15 Sep 2023
+subtitle: "Ukrains top community-driven Ethereum event" #used in header subtitle
+date: "14 - 15 September 2023"
+#SEO settings
+description: 'Ukrains Premier Ethereum Hackathon'
+head:
+  meta:
+    - name: 'keywords'
+      content: 'conference , hackathon, Kyiv'
+    - name: 'robots'
+      content: 'index, follow'
+#image:
+#  src: '/assets/social-card.png'
+#  alt: 'An image showcasing My Page.'
+#  width: 400
+#  height: 300
+---
+Through the hackathon, conference and side events like DayZero, discussions, collaborations, and vast networking, we aim to further establish Kyiv as an innovation and infrastructure development leader

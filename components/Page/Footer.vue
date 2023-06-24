@@ -38,6 +38,9 @@ const app = useAppConfig() as AppConfigInput
           <div class="">
             <p class="font-bold">About</p>
             <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
+              <Anchor class="hover:no-underline hover:opacity-75" to="/media">
+                Media Page
+              </Anchor>
               <a class="hover:opacity-75" href> Privacy Policy </a>
               <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
               <a class="hover:opacity-75" href> Accessibility </a>
@@ -87,10 +90,8 @@ const app = useAppConfig() as AppConfigInput
             <p class="font-bold">Helpful Links</p>
             <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
               <a class="hover:opacity-75" href> Contact </a>
-              <a class="hover:opacity-75" href> FAQs </a>
               <a class="hover:opacity-75" href> Hacker Manual </a>
               <a class="hover:opacity-75" href> Sponsor Manual </a>
-              <a class="hover:opacity-75" href> Media Page</a>
             </nav>
           </div>
         </div>

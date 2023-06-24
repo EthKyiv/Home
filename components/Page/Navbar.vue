@@ -26,7 +26,10 @@ const menus = computed((): IMenuItem[] => [
   {
     type: 'link',
     text: 'FAQ',
-    route: { hash: '#FAQ' },
+    route: {
+      name: route.name === 'hackathon' ? 'hackathon' : 'index',
+      hash: '#FAQ',
+    },
   },
   {
     type: 'link',
@@ -53,18 +56,18 @@ const dynamicButton = computed((): IMenuItem => {
       </div>
     </template> -->
     <template #pre-menu>
-      <div class="relative items-center ml-auto lg:hidden">
+      <div class="relative items-center ml-auto md:hidden">
         <Button
           :text="dynamicButton.text"
           size="sm"
-          class="min-w-36"
+          class="min-w-36 h-8 lg:h-auto"
           :to="dynamicButton.route ? dynamicButton.route : undefined"
           type="transparent"
         />
       </div>
     </template>
     <template #menu>
-      <div class="relative hidden lg:flex items-center lg:ml-auto">
+      <div class="relative hidden md:flex items-center md:ml-auto">
         <nav
           class="text-sm leading-6 font-semibold text-gray-900"
           role="navigation"
@@ -76,8 +79,8 @@ const dynamicButton = computed((): IMenuItem => {
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline text-gray-900 hover:text-black dark:hover:text-black capitalize"
-                >{{ item.text }}</Anchor
-              >
+                >{{ item.text }}
+              </Anchor>
               <Button
                 v-else-if="item.type === 'button'"
                 :text="item.text"
@@ -106,7 +109,8 @@ const dynamicButton = computed((): IMenuItem => {
               class="border-0"
               @click.prevent="toggleOptions(false)"
             >
-              Close <IconMdi:close class="ml-3" />
+              Close
+              <IconMdi:close class="ml-3" />
             </Button>
           </ActionSheetHeader>
           <nav class="leading-6 text-gray-900">
@@ -124,8 +128,8 @@ const dynamicButton = computed((): IMenuItem => {
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                   class="flex-1 hover:no-underline capitalize"
-                  >{{ item.text }}</Anchor
-                >
+                  >{{ item.text }}
+                </Anchor>
                 <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"

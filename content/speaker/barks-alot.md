@@ -1,6 +1,7 @@
 ---
 name: Bark Tholamew
 url: https://icon-sets.iconify.design/teenyicons/lego-outline/
-highlight: true
+keynote: true
+panel: true
 order: 0
 ---

@@ -4,10 +4,6 @@ import { AppConfigInput } from '@nuxt/schema'
 // state
 const app = useAppConfig() as AppConfigInput
 
-// page data
-const { data } = await useAsyncData('hackathon', () =>
-  queryContent('/page/hackathon').findOne()
-)
 const { data: card } = await useAsyncData('hackathon_partials', () =>
   queryContent('/page/hackathon')
     .where({ _partial: true, type: { $eq: 'card' } })
@@ -28,34 +24,35 @@ definePageMeta({
         class="flex flex-col items-start justify-center py-10 md:py-10 lg:py-20"
       >
         <kinesis-container event="move">
-          <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
-            <div class="flex flex-col-reverse md:flex-row gap-6 m">
-              <span
-                class="text-xl md:text-2xl lg:text-3xl font-bold uppercase h-9"
-              >
-                {{ data.date }}
-              </span>
-            </div>
-            <h1 class="mt-0">
-              <span class="sr-only"> ETH Kyiv</span>
-              <BrandLogoDecorative
-                class="w-full lg:w-630px md:w-auto"
-                alt="ETH Kyiv logo"
-              />
-            </h1>
+          <ContentDoc v-slot="{ doc }" path="page/hackathon/">
+            <div class="flex-initial flex flex-col z-10 mb-8 lg:mb-10">
+              <div class="flex flex-col-reverse md:flex-row gap-6 m">
+                <span
+                  class="text-xl md:text-2xl lg:text-3xl font-bold uppercase h-9"
+                >
+                  {{ doc.date }}
+                </span>
+              </div>
+              <h1 class="mt-0">
+                <span class="sr-only"> {{ doc.title }}</span>
+                <BrandLogoDecorative
+                  class="w-full lg:w-630px md:w-auto"
+                  alt="ETH Kyiv logo"
+                />
+              </h1>
 
-            <div
-              class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] md:bg-transparent md:dark:bg-transparent"
-            >
-              <h2
-                class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
+              <div
+                class="w-full md:w-630px mt-4 bg-white/[0.8] dark:bg-slate-900/[0.8] sm:bg-transparent sm:dark:bg-transparent"
               >
-                {{ data.title }}
-              </h2>
-              <ContentRenderer :value="data" class="text-sm" />
+                <h2
+                  class="text-gray-800 dark:text-slate-300 font-bold uppercase text-sm"
+                >
+                  {{ doc.subtitle }}
+                </h2>
+                <ContentRenderer :value="doc" class="text-sm" />
+              </div>
             </div>
-          </div>
-
+          </ContentDoc>
           <div
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
@@ -146,6 +143,7 @@ definePageMeta({
 
 <style lang="scss">
 @import '../assets/sass/variables';
+
 @media screen and (max-width: 480px) {
 }
 </style>

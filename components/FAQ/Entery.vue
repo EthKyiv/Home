@@ -1,5 +1,12 @@
 <script lang="ts" setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
 <template>
@@ -13,7 +20,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         class="flex flex-col justify-between items-start w-full text-left text-gray-800 dark:text-slate-400 hover:text-blue-500 transition-colors duration-200 font-bold text-lg"
       >
         <div class="flex justify-between w-full">
-          <span>Do you offer technical support?</span>
+          <span>{{ data.title }}</span>
           <IconMdi:triangle
             :class="[
               open ? 'rotate-180 ' : 'rotate-90',
@@ -23,11 +30,20 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         </div>
       </DisclosureButton>
     </dt>
-    <DisclosurePanel as="dd" class="text-base pr-6 ml-0"
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus
-      quibusdam veritatis mollitia dicta doloribus repellat ullam beatae,
-      perferendis blanditiis recusandae quidem. Ex perferendis animi praesentium
-      dolore, similique quod sunt.</DisclosurePanel
+    <transition
+      enter-active-class="transition duration-250 ease-out"
+      enter-from-class="transform scale-96 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-200 ease-out"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-96 opacity-0"
     >
+      <DisclosurePanel as="dd" class="text-base pr-6 ml-0">
+        <ContentRenderer
+          :value="data"
+          class="prose max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600"
+        />
+      </DisclosurePanel>
+    </transition>
   </Disclosure>
 </template>

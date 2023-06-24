@@ -6,15 +6,18 @@ export default {
 
     if (savedPosition) return savedPosition
 
-    if (to.hash && to.path === from.path) {
+    if (to.hash) {
       const el = document.querySelector(to.hash)
+
       if (el) {
         return { top: el.offsetTop, left: 0, behavior: 'smooth' }
       } else {
         return new Promise((resolve) => {
           nuxtApp.hook('page:finish', () => {
             const el = document.querySelector(to.hash)
-            resolve({ top: el.offsetTop, left: 0, behavior: 'smooth' })
+            if (el) {
+              resolve({ top: el.offsetTop, left: 0, behavior: 'smooth' })
+            }
           })
         })
       }
