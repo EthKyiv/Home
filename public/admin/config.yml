@@ -33,7 +33,7 @@ collections:
           display_fields:  ["title"],
           value_field: 'id'
         }
-      - { label: "URL", name: "url", widget: "string", hint: "A link to website or social media profile", required: false }
+      - { label: "URL", name: "url", widget: "string",pattern: ['^(https?:\/\/)?([\da-z\.-]+\.[a-z\.]{2,6}|[\d\.]+)([\/:?=&#]{1}[\da-z\.-]+)*[\/\?]?$', 'Please enter a valid URL'], hint: "A link to website or social media profile", required: false }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}
   - name: "partner-type" # Used in routes, e.g., /admin/collections/blog
@@ -60,10 +60,34 @@ collections:
       preview: false
     identifier_field: name
     fields: # The fields for each document, usually in front matter
+      - { label: "Keynote speaker", name: "keynote", widget: "boolean", default: false, required: false }
+      - { label: "Panel speaker", name: "panel", widget: "boolean", default: false, required: false }
       - { label: "Speaker name", name: "name", widget: "string" }
-      - { label: "Speaker job/title", name: "title", widget: "string", required: false  }
+      - { label: "Speaker job/title", name: "description", widget: "string", required: false  }
       - { label: "Profile picture", name: "img", widget: "image", required: false  }
-      - { label: "Twitter url", name: "twitter", widget: "string" , required: false }
-      - { label: "Link", name: "url", widget: "string", hint: "link to company or persona website ", required: false  }
-      - { label: "Highlight", name: "highlight", widget: "boolean", default: false, hint: "Add a drop shadow to highlight a speaker"}
+      - { label: "Twitter url", name: "twitter", widget: "string",pattern: ['(https:\/\/twitter.com\/(?![a-zA-Z0-9_]+\/)([a-zA-Z0-9_]+))', 'Please enter a full URL'], required: false }
+      - { label: "Link", name: "url", widget: "string", pattern: ['(http|ftp|https):\/\/([\w+?\.\w+])+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\"\,]*)?', 'Please enter a valid URL'], hint: "link to company or persona website ", required: false  }
       - { label: "Order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}
+  - name: "faq" # Used in routes, e.g., /admin/collections/blog
+    label: "FAQ's" # Used in the UI
+    label_singular: "FAQ"
+    hide: false
+    folder: "content/faq" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields:
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: false} # The fields for each document, usually in front matter
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          multiple: true,
+          min: 1,
+          default: ["general"],
+          options: ["general", "conference", "hack", "media"]
+        }
+      - { label: "Question", name: "title", widget: "string" }
+      - { label: "Answer", name: "body", widget: "markdown"  }
+      - { label: "Question order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}

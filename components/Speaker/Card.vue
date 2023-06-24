@@ -4,10 +4,6 @@ defineProps({
     type: String,
     required: true,
   },
-  highlight: {
-    type: Boolean,
-    default: false,
-  },
   img: {
     type: String,
     required: false,
@@ -24,12 +20,19 @@ defineProps({
     type: String,
     required: false,
   },
+  panel: {
+    type: Boolean,
+    default: false,
+  },
+  keynote: {
+    type: Boolean,
+    default: false,
+  },
 })
 </script>
 <template>
   <div
-    :class="{ 'drop-shadow-dec': highlight }"
-    class="card rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
+    class="card hover:drop-shadow-dec rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
   >
     <img
       v-if="img"
@@ -48,6 +51,7 @@ defineProps({
       <h4 class="font-bold text-lg text-gray-800 dark:text-slate-400">
         {{ name }}
       </h4>
+      <p class="font-light text-sm text-gray-800">{{ description }}</p>
       <div class="flex gap-4 pt-2">
         <NuxtLink
           v-if="twitter"
@@ -56,7 +60,7 @@ defineProps({
           :class="`ease-in duration-300 transform  bg-blue-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded hover:-rotate-7`"
         >
           <slot>
-            <IconMdi:twitter class="" />
+            <IconMdi:twitter />
           </slot>
         </NuxtLink>
         <NuxtLink
@@ -66,11 +70,26 @@ defineProps({
           :class="`ease-in duration-300 transform  bg-yellow-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded`"
         >
           <slot>
-            <IconMdi:link class="" />
+            <IconMdi:link />
           </slot>
         </NuxtLink>
+
+        <div
+          v-if="keynote"
+          title="Keynote"
+          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded"
+        >
+          <IconTabler:military-award />
+        </div>
+
+        <div
+          v-if="panel"
+          title="Keynote"
+          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded"
+        >
+          <IconHealthicons:group-discussion-meetingx3-outline />
+        </div>
       </div>
-      <!-- <p class="font-bold  uppercase text-sm text-gray-800 ">{{ description }}</p> -->
     </div>
   </div>
 </template>

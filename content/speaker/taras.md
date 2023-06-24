@@ -1,9 +1,10 @@
 ---
+keynote: true
+panel: false
 name: Fearless Leader
-title: Our hero
+description: Our hero
 img: /img/head.svg
-twitter: twitter.com/futurvisions
-url: instagram.com/me
-highlight: true
+twitter: https://twitter.com/futurvisions
+url: https://instagram.com/me
 order: 3000
 ---
