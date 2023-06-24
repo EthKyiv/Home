@@ -134,8 +134,7 @@ definePageMeta({
 
       <PageSectionBounties></PageSectionBounties>
       <PageSectionAgenda></PageSectionAgenda>
-      <PageSectionSpeakers></PageSectionSpeakers>
-      <PageSectionPartners></PageSectionPartners>
+      <PageSectionPartners media></PageSectionPartners>
       <PageSectionFAQ></PageSectionFAQ>
     </PageBody>
   </PageWrapper>

@@ -6,7 +6,7 @@ defineProps({
   },
   img: {
     type: String,
-    required: false,
+    default: '/img/head.svg',
   },
   twitter: {
     type: String,
@@ -35,24 +35,19 @@ defineProps({
     class="card hover:drop-shadow-dec rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
   >
     <img
-      v-if="img"
       class="aspect-square border-2 bg-green-500 border-gray-800 dark:border-slate-400 object-cover m-4 filter saturate-0"
       :src="img"
       :alt="name"
     />
-    <div
-      v-else
-      class="aspect-square flex justify-center items-center border-2 bg-green-500 border-gray-800 dark:border-slate-400 object-cover m-4"
-    >
-      <IconTeenyicons:lego-outline class="text-8xl text-slate-900" />
-    </div>
 
-    <div class="px-4 pb-4">
-      <h4 class="font-bold text-lg text-gray-800 dark:text-slate-400">
+    <div class="px-4 pb-4 flex flex-col h-full hyphens-auto break-words">
+      <h4
+        class="font-bold text-base md:text-lg text-gray-800 dark:text-slate-400"
+      >
         {{ name }}
       </h4>
       <p class="font-light text-sm text-gray-800">{{ description }}</p>
-      <div class="flex gap-4 pt-2">
+      <div class="flex gap-4 pt-2 mt-auto flex-wrap">
         <NuxtLink
           v-if="twitter"
           tag="a"
