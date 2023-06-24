@@ -28,14 +28,18 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  title: {
+    type: String,
+    required: false,
+  },
 })
 </script>
 <template>
   <div
-    class="card hover:drop-shadow-dec rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
+    class="card card-speaker rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
   >
     <img
-      class="aspect-square border-2 bg-green-500 border-gray-800 dark:border-slate-400 object-cover m-4 filter saturate-0"
+      class="card-speaker-img aspect-square border-2 bg-green-300 border-gray-800 dark:border-slate-400 object-cover m-4 filter saturate-0"
       :src="img"
       :alt="name"
     />

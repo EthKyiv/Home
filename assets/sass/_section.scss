@@ -91,6 +91,7 @@ footer {
 }
 
 
+
 .partners-title {
   @apply text-gray-800 dark:text-slate-300 font-bold uppercase text-2xl flex gap-4 items-end;
 }
@@ -105,4 +106,17 @@ footer {
 .partner-badge {
 @extend .drop-shadow-dec-gray;
 @apply  flex justify-center items-center  dark:bg-black dark:border-slate-700   border-2  border-slate-900  rounded;
+
+}
+
+.card-speaker {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    @extend .drop-shadow-dec;
+
+    .card-speaker-img {
+      transition: all 0.2s ease-in-out;
+      filter: none
+    }
+  }
 }
