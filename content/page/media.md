@@ -28,11 +28,27 @@ For this reason, our inaugural event will be focused on localizing global resour
 
 For those interested in supporting and spreading our efforts.
 
--  [Link title](https://dayzero.netlify.app/)
--  [second link](https://dayzero.netlify.app/)
+-  [Media Kit](https://dayzero.netlify.app/)
+-  [LinkedinBanner](https://dayzero.netlify.app/)
+-  [SupporterProfileFrame](https://dayzero.netlify.app/)
 
 ---
 
+## Coverage in the Media
+
+Twitter: 
+[AllBridge](https://twitter.com/allbridge_io/status/1654488206883139586)
+[Hacken](https://twitter.com/hackenua/status/1658937520439058432)
+
+Instagram: 
+[UHF](https://www.instagram.com/p/CsBudMCN1Zg/)
+
+LinkedIn: 
+[Peanut](https://www.linkedin.com/posts/peanut-trade_dayzero-ethkyiv-peanutsponsorsdayzero-activity-7062081608933101570-Uj3Y)
+
+Press:
+[CoinTelegram](https://coinstelegram.com/news/blockchain-festival-dayzero/)
+[MC.Today](https://mc.today/uk/?p=383880)
 
 
 ## Where We've Begun
@@ -43,8 +59,10 @@ It is with these interests that the public goods portion of the hackathon will b
 ETH:KYIV is no mere event; it is an innovation festival, celebrating and supporting those at the forefront of it, and it promises to be jam-packed days of informative presentations, panel discussions,
 
 
+## Where We'll Go Next
 
-
-
+Entirely determined by our sponsors, our community, and you.
+Interested in helping spread our mission?
+Let us know [here]([https://dayzero.netlify.app/](https://docs.google.com/forms/d/1cpBc_SAhJnHRwQELrD6Ivy8Ljo6t_NV_DEnlQBjJn2s/viewform?edit_requested=true)https://docs.google.com/forms/d/1cpBc_SAhJnHRwQELrD6Ivy8Ljo6t_NV_DEnlQBjJn2s/viewform?edit_requested=true)!
 
 
