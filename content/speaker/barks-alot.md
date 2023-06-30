@@ -1,8 +1,8 @@
 ---
-name: Very Longoooongnamemmm
-url: https://icon-sets.iconify.design/teenyicons/lego-outline/
 keynote: true
 panel: true
-description: lorem ipsum long
+name: Special Guest
+description: Layer 0 Founder
+url: https://icon-sets.iconify.design/teenyicons/lego-outline/
 order: 0
 ---
