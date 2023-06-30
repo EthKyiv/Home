@@ -1,8 +1,8 @@
 ---
-name: Sir Miauswalot
+name: Next Generation Creators
 title: Top Fishmonger
-img: /img/304.jpeg
-twitter: https://www.pexels.com/search/cat/
+img: /img/head.svg
+twitter: ""
 url: https://www.pexels.com/search/cat/
 highlight: false
 order: 99
