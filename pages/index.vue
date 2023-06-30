@@ -153,7 +153,7 @@ See you at DayONE of EthKYIV!
             <BrandLogoDimond class="text-white pt-20 pl-20 h-70 w-auto" />
           </div>
           <div class="bg-gray-100 aspect-video">
-            [![Watch the video](/img/videocover_img.png)](https://www.youtube.com/watch?v=ATAthUup3TA){:target="_blank"}
+            [![OfficialVideo](../content/media/page/img/videocover_img.png)](https://www.youtube.com/watch?v=ATAthUup3TA)
             <!-- <BrandLogoDimond class="text-white  w-auto " /> -->
           </div>
         </div>
