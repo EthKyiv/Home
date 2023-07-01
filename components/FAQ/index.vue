@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { data } = await useAsyncData('faq', () =>
-  queryContent('/faq').sort({ order: -1, $numeric: true }).find()
+  queryContent('/faq').sort({ order: 1, $numeric: true }).find()
 )
 </script>
 

@@ -2,7 +2,7 @@
 hidden: false
 category:
   - general
-title: what topics will be covered?
+title: What topics will be covered?
 order: 9
 ---
 E﻿VERYTHING DIGITAL,\

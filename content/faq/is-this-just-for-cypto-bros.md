@@ -2,7 +2,7 @@
 hidden: false
 category:
   - general
-title: Is this just for cypto bros?
+title: Is this just for crypto bros?
 order: 7
 ---
 

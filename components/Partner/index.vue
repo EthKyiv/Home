@@ -41,7 +41,7 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
 </script>
 <template>
   <div class="w-full">
-    <template v-if="platinum && bronze.length > 0">
+    <template v-if="platinum && platinum.length > 0">
       <h2 class="partners-title">
         <IconMdi:decagram-outline
           class="ease-in duration-300 transform bg-blue-500 text-gray-900 p-1 border border-1 border-gray-900 rounded w-8 h-8"

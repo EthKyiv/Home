@@ -2,7 +2,7 @@
 hidden: false
 category:
   - general
-title: what is a hackathon?
+title: What is a hackathon?
 order: 8
 ---
 At our upcoming conference, we will have a battle for the future of the country. This battle will not be with weapons, but with wits. Developers, Designers, and Dreamers will be granted an opportunity to make the future of Kyiv, Ukraine, and the world around us a better place. Those that accept this invitation will have their chance to claim over 100 thousand dollars in bounties and awards. To make this future even more accessible, Today, we will begin the impact and public goods portion of the hackathon. We are happy to announce that this will be with the partnership of the [Ministry of Digital Transformation](https://ukraine.ua/invest-trade/digitalization/), and the help and mentorship of [Yellow](https://www.yellow.org/), who will be available in the coming days and weeks to support those helping us build a better future.

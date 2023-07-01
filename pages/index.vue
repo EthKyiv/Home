@@ -146,14 +146,28 @@ definePageMeta({
         >
           DayZero
         </h2>
-        <div class="mt-10 ml-auto grid grid-cols-2 gap-16">
+        <div class="mt-10 ml-auto grid md:grid-cols-2 gap-4 md:gap-16">
           <div class="">
-            The official announcement event of Ukraine’s premier community-driven Ethereum event. On 25.5.2023, change-makers and future-builders descended upon Kyiv for a packed day of talks, discussions, introductions, and advancements on chain and in person. DAYZERO was an collective step towards the future of Ukraine, and for the global community that it is growing to support. It fills us with excitement for the days a few short months from now when these creators of tomorrow’s solutions return with the full weight and power of their influence;  Thanks to all who were a part of this!  
-See you at DayONE of EthKYIV!
-            <BrandLogoDimond class="text-white pt-20 pl-20 h-70 w-auto" />
+            The official announcement event of Ukraine’s premier
+            community-driven Ethereum event. On 25.5.2023, change-makers and
+            future-builders descended upon Kyiv for a packed day of talks,
+            discussions, introductions, and advancements on chain and in person.
+            DAYZERO was an collective step towards the future of Ukraine, and
+            for the global community that it is growing to support. It fills us
+            with excitement for the days a few short months from now when these
+            creators of tomorrow’s solutions return with the full weight and
+            power of their influence; Thanks to all who were a part of this! See
+            you at DayONE of EthKYIV!
+            <!-- <BrandLogoDimond class="text-white pt-20 pl-20 h-70 w-auto" /> -->
           </div>
           <div class="bg-gray-100 aspect-video">
-            [![OfficialVideo](../content/media/page/img/videocover_img.png)](https://www.youtube.com/watch?v=ATAthUup3TA)
+            <a
+              title="official video"
+              href="https://www.youtube.com/watch?v=ATAthUup3TA"
+            >
+              <img src="/img/videocover_img.png" />
+            </a>
+
             <!-- <BrandLogoDimond class="text-white  w-auto " /> -->
           </div>
         </div>

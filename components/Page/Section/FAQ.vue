@@ -7,7 +7,7 @@ const app = useAppConfig() as AppConfigInput
     <PageSectionTitle title="Frequently Asked Questions">
       <template #before>
         <BrandSkyline
-          class="h-48 w-auto text-primary-500 md:mb-2 lg:mb-4 max-w-80vw"
+          class="h-48 w-auto text-secondary-500 md:mb-2 lg:mb-4 max-w-80vw"
         />
       </template>
       <p>
