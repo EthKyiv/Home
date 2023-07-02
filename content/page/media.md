@@ -61,8 +61,10 @@ ETH:KYIV is no mere event; it is an innovation festival, celebrating and support
 
 ## Where We'll Go Next
 
-Entirely determined by our sponsors, our community, and you.
+Entirely determined by our sponsors, our community, and you. 
+
 Interested in helping spread our mission?
-Let us know [here]([https://dayzero.netlify.app/](https://docs.google.com/forms/d/1cpBc_SAhJnHRwQELrD6Ivy8Ljo6t_NV_DEnlQBjJn2s/viewform?edit_requested=true)https://docs.google.com/forms/d/1cpBc_SAhJnHRwQELrD6Ivy8Ljo6t_NV_DEnlQBjJn2s/viewform?edit_requested=true)!
+
+Let us know :app-link{to="application_media"}[here]!
 
 
