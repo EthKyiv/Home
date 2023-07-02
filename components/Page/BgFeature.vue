@@ -57,10 +57,10 @@ export default {
         200
       )}px`
       mouseLight.style.filter = `blur(${Math.min(
-        Math.max(size * 20, 100),
+        Math.max(size * 20, 80),
         120
       )}px)`
-      mouseLight.style.opacity = Math.min(Math.max(size / 2, 0.8), 0.2)
+      mouseLight.style.opacity = Math.min(Math.max(size / 2, 1), 0.8)
 
       mouseLight.style.top = `${
         e.clientY - bodyRect.y - mouseLight.clientHeight / 2
@@ -71,10 +71,10 @@ export default {
         200
       )}px`
       mouseLight.style.filter = `blur(${Math.min(
-        Math.max(size * 50, 100),
-        160
+        Math.max(size * 50, 80),
+        120
       )}px)`
-      mouseLight.style.opacity = Math.min(Math.max(size / 2, 0.8), 0.9)
+      mouseLight.style.opacity = Math.min(Math.max(size / 2, 1), 0.8)
 
       const dx = e.pageX - pointerRect.left
       const dy = e.pageY - pointerRect.top
@@ -113,9 +113,9 @@ export default {
 .visual-effects .mouse-gradient {
   background: repeating-linear-gradient(
     to right,
-    #006aff 0%,
+    #c3ff00 0%,
     #d9ff03 50%,
-    #05341c6d 100%
+    #04b7cbd5 100%
   );
   filter: blur(100px);
   opacity: 1;

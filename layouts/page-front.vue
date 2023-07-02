@@ -10,7 +10,7 @@
       <div class="flex-1 w-full flex flex-col">
         <kinesis-element :strength="-20">
           <div
-            class="absolute invisible xl:visible top-0 right-0 transform -translate-x-18 translate-y-20 rotate-340 linear-wipe"
+            class="absolute invisible xl:visible top-0 right-0 transform -translate-x-18 translate-y-20 rotate-340 linear-wipe dark:text-black"
           >
             <BrandFlowerSm :width="180"></BrandFlowerSm>
           </div>
@@ -21,7 +21,7 @@
           class="transition duration-100 rotate-12"
         >
           <div
-            class="absolute z-0 invisible md:visible top-0 right-0 transform translate-x-60 translate-y-180 linear-wipe"
+            class="absolute z-0 invisible md:visible top-0 right-0 transform translate-x-60 translate-y-180 linear-wipe dark:text-black"
           >
             <!-- Brand Flower -->
             <BrandFlower></BrandFlower>
@@ -34,12 +34,26 @@
           class="fixed bottom-1/2 left-0 invisible lg:visible"
         >
           <div
-            class="text-black transform translate-x-18 -rotate-20 linear-wipe"
+            class="dark:text-black transform translate-x-18 -rotate-20 linear-wipe"
             style=""
           >
             <BrandLogoDimond :width="250" :height="250"></BrandLogoDimond>
           </div>
         </kinesis-element>
+
+        <kinesis-element
+          :strength="-20"
+          type="depth"
+          class="fixed bottom-1/3 right-70 invisible lg:visible"
+        >
+          <div
+            class="dark:text-black transform translate-x-18 rotate-320 linear-wipe"
+            style=""
+          >
+            <BrandFlowerSm :width="180" :height="180"></BrandFlowerSm>
+          </div>
+        </kinesis-element>
+
 
         <kinesis-element
           :strength="-20"
