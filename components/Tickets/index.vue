@@ -14,6 +14,11 @@ defineProps({
     type: Boolean,
     required: false,
   },
+  subtitle: {
+    type: String,
+    required: true,
+    default: '',
+  },
   title: {
     type: String,
     required: true,
@@ -35,11 +40,15 @@ defineProps({
     type: String,
     default: 'Register',
   },
+  features: {
+    type: Array,
+    default: []
+  }
 })
 </script>
 
 <template>
-  <Card :class="{ 'drop-shadow-dec bg-yellow-100 dark:bg-black': featured }">
+  <Card class="max-w-130" :class="{ 'drop-shadow-dec bg-yellow-100 dark:bg-black': featured }">
     <!-- <div v-if="featured" class="bg-ugradient opacity-60 h-100 absolute w-150 left-0 z-0 top-0"></div> -->
     <CardContent>
       <CardTitle class="pb-4">
@@ -58,19 +67,19 @@ defineProps({
           {{ title }}
         </h3>
         <p class="text-sm italic font-thin leading-tight mt-3 pr-10">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          {{ subtitle }}
         </p>
       </CardTitle>
 
       <ul role="list" class="flex flex-col">
-        <li v-for="i in 3" class="flex items-center py-3 lg:col-span-1">
+        <li v-for="feature in features" class="flex items-top py-3 lg:col-span-1">
           <div class="shrink-0">
             <IconMdi:ethereum
               :class="`${color} text-gray-900 text-xl border border-1 border-gray-900 rounded`"
             />
           </div>
           <p class="ml-3 text-sm text-gray-800 dark:text-slate-500">
-            Access to the in person event
+            {{ feature }}
           </p>
         </li>
       </ul>
