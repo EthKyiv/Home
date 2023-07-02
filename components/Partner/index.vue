@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
-const { data: platinum } = await useAsyncData('platinum', () =>
-  queryContent('/partners')
-    .where({ hidden: false, type: 'platinum' })
-    .sort({ order: -1, $numeric: true })
-    .find()
-)
+
 const { data: gold } = await useAsyncData('gold', () =>
   queryContent('/partners')
     .where({ hidden: false, type: 'gold' })
@@ -41,27 +36,6 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
 </script>
 <template>
   <div class="w-full">
-    <template v-if="platinum && platinum.length > 0">
-      <h2 class="partners-title">
-        <IconMdi:decagram-outline
-          class="ease-in duration-300 transform bg-blue-500 text-gray-900 p-1 border border-1 border-gray-900 rounded w-8 h-8"
-        />
-        <span>Platinum</span>
-      </h2>
-
-      <div
-        class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 grid-flow-row auto-rows-max mb-4 mt-4 w-full mb-16"
-      >
-        <PartnerCard
-          v-for="partner in platinum"
-          :key="partner.name"
-          :badge-class="logoClassPlatinum"
-          :name="partner.name"
-          :logo="partner.logo"
-        >
-        </PartnerCard>
-      </div>
-    </template>
     <template v-if="gold && gold.length > 0">
       <h2 class="partners-title">
         <IconMdi:octagram-outline

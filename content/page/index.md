@@ -1,7 +1,7 @@
 ---
-title: ETHKyiv 14-15 Sep 2023
+title: ETHKyiv 15 - 17 Sep 2023
 subtitle: "Ukrains top community-driven Ethereum event" #used in header subtitle
-date: "14 - 15 September 2023"
+date: "15 - 17 September 2023"
 #SEO settings
 description: 'Ukrains Premier Ethereum Conference and Hackathon'
 head:

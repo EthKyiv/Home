@@ -21,7 +21,7 @@ useHead({
       hid: 'description',
       name: 'description',
       content:
-        'Ukraine’s Premier Ethereum Conference happening from 14th - 15th September 2023',
+        'Ukraine’s Premier Ethereum Conference happening from 15th - 17th September 2023',
     },
     {
       name: 'twitter:card',

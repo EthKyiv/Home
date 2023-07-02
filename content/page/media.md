@@ -1,6 +1,6 @@
 ---
 title: Media # this
-date: "14 - 15 September 2023"
+date: "15 - 17 September 2023"
 #SEO settings
 description: 'Ukrains Premier Ethereum Conference and Hackathon'
 head:

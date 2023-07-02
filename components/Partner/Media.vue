@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
 
-const { data: media } = await useAsyncData('media', () =>
+const { data: media } = await useAsyncData('hack_partner', () =>
   queryContent('/partners')
-    .where({ hidden: false, type: 'media' })
+    .where({ hidden: false, type: 'hack_partner' })
     .sort({ order: -1, $numeric: true })
     .find()
 )
