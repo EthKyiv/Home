@@ -24,10 +24,12 @@ const app = useAppConfig() as AppConfigInput
               />
             </span>
           </NuxtLink>
-          <p class="max-w-xs mt-4 text-sm text-gray-800">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-            accusantium.
-          </p>
+          <ContentQuery v-slot="{ data }" path="page/section/footer" find="one">
+            <ContentRenderer
+              :value="data"
+              class="prose prose-sm lg:max-w-xs mt-2 text-sm"
+            > <template #empty></template></ContentRenderer>
+          </ContentQuery>
           <div class="flex mt-8 space-x-6 text-gray-800">
             <PageSocialLinks lg />
           </div>

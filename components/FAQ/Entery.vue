@@ -41,7 +41,7 @@ defineProps({
       <DisclosurePanel as="dd" class="text-base pr-6 ml-0">
         <ContentRenderer
           :value="data"
-          class="prose max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600"
+          class="prose max-w-none  text-gray-800 dark:text-slate-400  prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600"
         />
       </DisclosurePanel>
     </transition>
