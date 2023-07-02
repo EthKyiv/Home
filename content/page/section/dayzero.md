@@ -5,7 +5,7 @@ video_cover: "/img/videocover_img.png"
 ---
 <!-- :app-link{to="hacker_manual"}[Hackers Guide] -->
 
-:lead{class="text-lg"}[On 25 May 2023, change-makers and future-builders descended upon Kyiv for DayZERO. The announcement of Ukraine’s premier community-driven Ethereum event EthKYIV.]
+:span{class="text-lg"}[On 25 May 2023, change-makers and future-builders descended upon Kyiv for DayZERO. The announcement of Ukraine’s premier community-driven Ethereum event EthKYIV.]
 
  A day packed with talks, discussions, introductions, and advancements on chain and in person:
 

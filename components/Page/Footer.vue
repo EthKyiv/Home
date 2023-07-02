@@ -28,7 +28,9 @@ const app = useAppConfig() as AppConfigInput
             <ContentRenderer
               :value="data"
               class="prose prose-sm lg:max-w-xs mt-2 text-sm"
-            > <template #empty></template></ContentRenderer>
+            >
+              <template #empty></template
+            ></ContentRenderer>
           </ContentQuery>
           <div class="flex mt-8 space-x-6 text-gray-800">
             <PageSocialLinks lg />

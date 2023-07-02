@@ -1,5 +1,10 @@
+<script lang="ts" setup>
+const { data: bounty } = await useAsyncData('bounty', () =>
+  queryContent('/bounties').where({ hidden: false }).limit(1).find()
+)
+</script>
 <template>
-  <PageSection id="bounties">
+  <PageSection v-if="bounty?.length > 0" id="bounties">
     <ContentQuery v-slot="{ data }" path="page/section/bounties" find="one">
       <PageSectionTitle v-if="data" :title="data.title">
         <template #before>

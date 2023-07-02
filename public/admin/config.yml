@@ -76,7 +76,7 @@ collections:
     format: "frontmatter"
     create: true # Allow users to create new documents in this collection
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Hidden", name: "hidden", widget: "boolean", default: false} # The fields for each document, usually in front matter
       - {
@@ -90,4 +90,20 @@ collections:
         }
       - { label: "Question", name: "title", widget: "string" }
       - { label: "Answer", name: "body", widget: "markdown"  }
-      - { label: "Question order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}
+      - { label: "Question order", name: "order", widget: "number" ,  default: 0, hint: "Will display in order from lowest (0) to highest"}
+  - name: "bounty" # Used in routes, e.g., /admin/collections/blog
+    label: "Bounties" # Used in the UI
+    label_singular: "bounty"
+    hide: false
+    folder: "content/bounties" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: true
+    fields:
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: false} # The fields for each document, usually in front matter
+      - { label: "Amount Or Pre-title", name: "pre_title", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle Or Company", name: "sub_title", widget: "string", required: false }
+      - { label: "Description", name: "body", widget: "markdown"  }
+      - { label: "Bounty order", name: "order", widget: "number" ,  default: 0, hint: "Add a higher number to display first, leave at 0 for default order"}
