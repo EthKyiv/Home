@@ -73,8 +73,9 @@ definePageMeta({
               />
             </kinesis-element>
           </div>
+
           <div
-            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
+            class="grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows relative z-10"
           >
             <Card v-if="card[0]" class="drop-shadow-dec z-10">
               <CardContent>
@@ -134,6 +135,15 @@ definePageMeta({
               </CardContent>
             </Card>
           </div>
+          <kinesis-element :strength="40" class="z-1">
+            <nuxt-img
+              src="/logo/dimond.png"
+              alt="eth kyiv logo"
+              class="absolute hidden xl:block bottom-0 right-40 transform xl:translate-y-1/3"
+              format="webp"
+              width="150"
+            />
+          </kinesis-element>
         </kinesis-container>
       </PageSection>
 

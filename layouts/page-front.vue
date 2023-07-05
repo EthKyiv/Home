@@ -21,7 +21,7 @@
           class="transition duration-100 rotate-12"
         >
           <div
-            class="absolute z-0 invisible md:visible top-0 right-0 transform translate-x-60 translate-y-180 linear-wipe dark:text-black"
+            class="absolute z-0 invisible md:visible top-0 right-0 transform translate-x-60 translate-y-190 linear-wipe dark:text-black"
           >
             <!-- Brand Flower -->
             <BrandFlower></BrandFlower>
