@@ -54,7 +54,6 @@
           </div>
         </kinesis-element>
 
-
         <kinesis-element
           :strength="-20"
           type="depth"

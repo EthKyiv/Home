@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     'nuxt-windicss',
     '@vite-pwa/nuxt',
     '@nuxtjs/google-fonts',
+    '@nuxt/image',
   ],
 
   // experimental features
@@ -141,15 +142,22 @@ export default defineNuxtConfig({
       ],
     },
     strategies: 'generateSW',
+
     workbox: {
-      navigateFallback: '/',
+      navigateFallback: undefined,
       globPatterns: ['**/*.{js,css}'],
+      runtimeCaching: [
+        {
+          urlPattern: '/',
+          handler: 'NetworkFirst',
+        },
+      ],
     },
     client: {
       installPrompt: false,
     },
     devOptions: {
-      enabled: true,
+      enabled: false,
       suppressWarnings: true,
       navigateFallbackAllowlist: [/^\/$/],
       type: 'module',

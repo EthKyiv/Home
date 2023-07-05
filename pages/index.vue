@@ -69,7 +69,7 @@ definePageMeta({
               <BrandTaras
                 :width="233"
                 :height="254"
-                class="absolute w-30 h-30 md:w-auto md:h-auto top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+                class="absolute max-w-30 max-h-30 md:max-w-none md:max-h-none top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>
@@ -156,9 +156,20 @@ definePageMeta({
               </ContentRenderer>
             </div>
             <div class="bg-gray-100 aspect-video">
-              <a title="official video" :href="data.video" target="_blank">
-                <img :src="data.video_cover" />
-              </a>
+              <NuxtLink
+                title="official video"
+                :to="data.video"
+                target="_blank"
+                no-rel
+              >
+                <nuxt-img
+                  :src="data.video_cover"
+                  alt="cover img video"
+                  format="webp"
+                  width="650"
+                  height="407"
+                />
+              </NuxtLink>
             </div>
           </div>
         </ContentQuery>

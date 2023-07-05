@@ -38,18 +38,19 @@ defineProps({
   <div
     class="card card-speaker rounded border-2 border-gray-800 dark:border-slate-400/[0.5] bg-white dark:bg-black flex flex-col"
   >
-    <img
+    <nuxt-img
       class="card-speaker-img aspect-square border-2 bg-green-300 border-gray-800 dark:border-slate-400 object-cover m-4 filter saturate-0"
       :src="img"
       :alt="name"
+      width="207"
     />
 
     <div class="px-4 pb-4 flex flex-col h-full hyphens-auto break-words">
-      <h4
+      <h3
         class="font-bold text-base md:text-lg text-gray-800 dark:text-slate-400"
       >
         {{ name }}
-      </h4>
+      </h3>
       <p class="font-light text-sm text-gray-800">{{ description }}</p>
       <div class="flex gap-4 pt-2 mt-auto flex-wrap">
         <NuxtLink

@@ -60,7 +60,7 @@ definePageMeta({
               <BrandTaras
                 :width="233"
                 :height="254"
-                class="absolute w-30 h-30 md:w-auto md:h-auto top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+                class="absolute max-w-30 max-h-30 md:max-w-none md:max-h-none top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>

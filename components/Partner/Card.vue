@@ -16,6 +16,14 @@ defineProps({
 </script>
 <template>
   <div :class="[badgeClass, 'partner-badge']" :title="name">
-    <img tabindex="0" class="partner-img" :src="logo" :alt="name" role="img" />
+    <nuxt-img
+      tabindex="0"
+      class="partner-img"
+      :src="logo"
+      :alt="name"
+      role="img"
+      format="webp"
+      width="211"
+    />
   </div>
 </template>

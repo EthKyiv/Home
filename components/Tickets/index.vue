@@ -42,13 +42,16 @@ defineProps({
   },
   features: {
     type: Array,
-    default: []
-  }
+    default: [],
+  },
 })
 </script>
 
 <template>
-  <Card class="max-w-130" :class="{ 'drop-shadow-dec bg-yellow-100 dark:bg-black': featured }">
+  <Card
+    class="max-w-130"
+    :class="{ 'drop-shadow-dec bg-yellow-100 dark:bg-black': featured }"
+  >
     <!-- <div v-if="featured" class="bg-ugradient opacity-60 h-100 absolute w-150 left-0 z-0 top-0"></div> -->
     <CardContent>
       <CardTitle class="pb-4">
@@ -72,7 +75,10 @@ defineProps({
       </CardTitle>
 
       <ul role="list" class="flex flex-col">
-        <li v-for="feature in features" class="flex items-top py-3 lg:col-span-1">
+        <li
+          v-for="feature in features"
+          class="flex items-top py-3 lg:col-span-1"
+        >
           <div class="shrink-0">
             <IconMdi:ethereum
               :class="`${color} text-gray-900 text-xl border border-1 border-gray-900 rounded`"
