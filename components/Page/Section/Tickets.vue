@@ -32,7 +32,7 @@ Become a Virtual Attendee!!"
         price="TBA"
         color="bg-blue-500"
         data-aos="fade-up"
-        data-aos-delay="50"
+        data-aos-delay="100"
       ></Tickets>
       <Tickets
         featured
@@ -46,7 +46,7 @@ Become a Virtual Attendee!!"
         price="TBA"
         color="bg-yellow-500"
         data-aos="fade-up"
-        data-aos-delay="100"
+        data-aos-delay="200"
       ></Tickets>
     </div>
   </PageSection>
