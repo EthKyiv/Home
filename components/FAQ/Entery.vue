@@ -21,12 +21,25 @@ defineProps({
       >
         <div class="flex justify-between w-full">
           <span class="pr-10">{{ data.title }}</span>
-          <IconMdi:triangle
+          <div
             :class="[
-              open ? 'rotate-180 ' : 'rotate-90',
-              `ease-in duration-300 transform  bg-blue-400  text-gray-900 text-xl p-1 border border-1 border-gray-900 rounded w-6 h-6`,
+              open ? 'rotate-90' : 'rotate-0',
+              'drop-shadow-button transform ease-in duration-300 bg-blue-400 p-1.5 border border-1 border-gray-900 rounded flex  items-center w-6 h-6',
             ]"
-          />
+          >
+            <IconFa:question
+              :class="[
+                open ? 'hidden' : '',
+                `ease-in duration-300 transform   text-gray-900  w-6 h-6 `,
+              ]"
+            />
+            <IconFa:check
+              :class="[
+                open ? 'rotate-270' : 'hidden',
+                `ease-in duration-300 transform  text-gray-900  w-6 h-6`,
+              ]"
+            />
+          </div>
         </div>
       </DisclosureButton>
     </dt>

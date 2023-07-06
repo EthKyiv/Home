@@ -4,7 +4,7 @@
       <h2 class="section-title">{{ data.title }}</h2>
     </ContentQuery>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-4 mt-4">
-      <Card class="mb-4 bg-yellow-200 md:col-span-2"  data-aos="fade-up">
+      <Card class="mb-4 bg-yellow-200 md:col-span-2" data-aos="fade-up">
         <CardContent>
           <ContentQuery v-slot="{ data }" path="page/section/agenda" find="one">
             <div class="uppercase font-bold">
@@ -24,7 +24,7 @@
           </ContentQuery>
         </CardContent>
       </Card>
-      <Card class="mb-4"  data-aos="fade-up" data-aos-delay="400">
+      <Card class="mb-4" data-aos="fade-up" data-aos-delay="400">
         <CardContent>
           <ContentQuery
             v-slot="{ data }"

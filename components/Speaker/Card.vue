@@ -57,7 +57,7 @@ defineProps({
           v-if="twitter"
           tag="a"
           :to="twitter"
-          :class="`ease-in duration-300 transform  bg-blue-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded hover:-rotate-7`"
+          :class="`ease-in duration-300 transform drop-shadow-button  bg-blue-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded hover:-rotate-7`"
         >
           <slot>
             <IconMdi:twitter />
@@ -67,27 +67,28 @@ defineProps({
           v-if="url"
           tag="a"
           :to="url"
-          :class="`ease-in duration-300 transform  bg-yellow-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded`"
+          :class="`ease-in duration-300 transform drop-shadow-button  bg-yellow-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center  text-gray-900  border border-1 border-gray-900 rounded`"
         >
           <slot>
             <IconMdi:link />
           </slot>
         </NuxtLink>
+        <div class="ml-auto"></div>
 
         <div
           v-if="keynote"
           title="Keynote"
-          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded"
+          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded-full drop-shadow-button"
         >
-          <IconTabler:military-award />
+          <IconPh:microphone-stage-fill />
         </div>
 
         <div
           v-if="panel"
-          title="Keynote"
-          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded"
+          title="Panel"
+          class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded-full drop-shadow-button"
         >
-          <IconHealthicons:group-discussion-meetingx3-outline />
+          <IconHealthicons:group-discussion-meetingx3 />
         </div>
       </div>
     </div>
