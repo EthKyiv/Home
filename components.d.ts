@@ -7,7 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    'IconArcticons:flutterhole': typeof import('~icons/arcticons/flutterhole')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
+    IconGameIconsAllSeeingEye: typeof import('~icons/game-icons/all-seeing-eye')['default']
+    IconGameIconsPentagramRose: typeof import('~icons/game-icons/pentagram-rose')['default']
+    IconGameIconsPlanetConquest: typeof import('~icons/game-icons/planet-conquest')['default']
     'IconGis:networkO': typeof import('~icons/gis/network-o')['default']
     'IconHealthicons:groupDiscussionMeetingx3Outline': typeof import('~icons/healthicons/group-discussion-meetingx3-outline')['default']
     'IconIconoir:medium': typeof import('~icons/iconoir/medium')['default']

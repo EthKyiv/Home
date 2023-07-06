@@ -98,7 +98,7 @@ const toggleOptions = (show?: boolean) => {
           <!-- menu -->
           <slot name="menu" />
           <!-- options:toggle -->
-          <div v-if="$slots['options']" class="ml-6 flex justify-end md:hidden">
+          <!-- <div v-if="$slots['options']" class="ml-6 flex justify-end md:hidden">
             <button
               class="flex items-center focus:outline-none"
               aria-label="Toggle Options Menu"
@@ -111,7 +111,7 @@ const toggleOptions = (show?: boolean) => {
                 <icon-fa-solid:ellipsis-v />
               </span>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
