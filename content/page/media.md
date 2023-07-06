@@ -1,10 +1,10 @@
 ---
 title: Media # this
-date: "15 - 17 September 2023"
+date: "Coming Soon"
 #SEO settings
 description: 'Ukrains Premier Ethereum Conference and Hackathon'
 head:
-  title: Media ETHKyiv 2023 #this page uses different title to render in meta tags/ as page name
+  title: Media ETHKyiv #this page uses different title to render in meta tags/ as page name
   meta:
     - name: 'keywords'
       content: 'conference , hackathon, Kyiv'
