@@ -7,6 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    'IconEl:close': typeof import('~icons/el/close')['default']
+    'IconEl:minus': typeof import('~icons/el/minus')['default']
+    'IconEl:plus': typeof import('~icons/el/plus')['default']
+    'IconEl:x': typeof import('~icons/el/x')['default']
     'IconFa:check': typeof import('~icons/fa/check')['default']
     'IconFa:question': typeof import('~icons/fa/question')['default']
     IconGameIconsPentagramRose: typeof import('~icons/game-icons/pentagram-rose')['default']
@@ -21,6 +25,7 @@ declare module '@vue/runtime-core' {
     'IconMdi:link': typeof import('~icons/mdi/link')['default']
     'IconMdi:octagramOutline': typeof import('~icons/mdi/octagram-outline')['default']
     'IconMdi:openInNew': typeof import('~icons/mdi/open-in-new')['default']
+    'IconMdi:plus': typeof import('~icons/mdi/plus')['default']
     'IconMdi:starOutline': typeof import('~icons/mdi/star-outline')['default']
     'IconMdi:televisionClassic': typeof import('~icons/mdi/television-classic')['default']
     'IconMdi:twitter': typeof import('~icons/mdi/twitter')['default']
@@ -29,6 +34,7 @@ declare module '@vue/runtime-core' {
     'IconOpenmoji:twitter': typeof import('~icons/openmoji/twitter')['default']
     'IconOpenmoji:youtube': typeof import('~icons/openmoji/youtube')['default']
     'IconPh:microphoneStageFill': typeof import('~icons/ph/microphone-stage-fill')['default']
+    'IconPh:plus': typeof import('~icons/ph/plus')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']
     'IconUil:apps': typeof import('~icons/uil/apps')['default']
     'IconUil:bars': typeof import('~icons/uil/bars')['default']
