@@ -57,10 +57,10 @@ definePageMeta({
             class="relative grid grid-cols-1 w-full lg:grid-cols-2 gap-4 md:w-80vw xl:w-3/4 2xl:w-2/3 grid-auto-rows"
           >
             <kinesis-element :strength="15" class="col-span-2">
-              <BrandTaras
+              <BrandTarasMonotone
                 :width="233"
                 :height="254"
-                class="absolute max-w-30 max-h-30 md:max-w-none md:max-h-none top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
+                class="absolute text-slate-600 lg:text-slate-900 max-w-30 max-h-30 md:max-w-none md:max-h-none top-30 md:top-0 right-0 transform rotate-12 -translate-y-59 translate-x-10 z-0"
               />
             </kinesis-element>
           </div>

@@ -153,7 +153,7 @@ const dynamicButton = computed((): IMenuItem => {
           type="secondary"
           size="sm"
           v-bind="app.links.discord"
-          class="hidden lg:flex rounded-full h-10"
+          class="hidden md:flex rounded-full h-10"
         >
           Join us
           <IconLineMd:discord-twotone class="text-purple ml-3 text-xl" />
@@ -162,7 +162,7 @@ const dynamicButton = computed((): IMenuItem => {
           type="secondary"
           size="sm"
           aria-lable="toggle navigation"
-          class="w-12 h-12 p-0 rounded-full visible lg:hidden"
+          class="w-12 h-12 p-0 rounded-full visible md:hidden"
           @click.prevent="toggleOptions(false)"
         >
           <span class="text-lg">

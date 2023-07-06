@@ -135,7 +135,7 @@ definePageMeta({
               </CardContent>
             </Card>
           </div>
-          <kinesis-element :strength="40" class="z-1">
+          <!-- <kinesis-element :strength="40" class="z-1">
             <nuxt-img
               src="/logo/dimond.png"
               alt="eth kyiv logo"
@@ -143,7 +143,7 @@ definePageMeta({
               format="webp"
               width="150"
             />
-          </kinesis-element>
+          </kinesis-element> -->
         </kinesis-container>
       </PageSection>
 

@@ -25,7 +25,7 @@ const logoClassPlatinum = 'bg-green-100  h-36 max-h-36'
         class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 grid-flow-row auto-rows-max mb-4 mt-4 w-full mb-16"
       >
         <PartnerCard
-          v-for="partner,i in media"
+          v-for="(partner, i) in media"
           :key="partner.name"
           :badge-class="logoClassPlatinum"
           :name="partner.name"

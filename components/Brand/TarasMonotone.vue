@@ -17,7 +17,7 @@ export default {
     xmlns="http://www.w3.org/2000/svg"
     :width="width"
     :height="height"
-    viewBox="0 0 1256 1475"
+    viewBox="0 0 1165 1367"
     fill="none"
   >
     <mask

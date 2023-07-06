@@ -6,7 +6,7 @@ const app = useAppConfig() as AppConfigInput
 
 <template>
   <footer
-    class="border-t lg:border-gray-900/10 dark:border-green-400/[0.4] bg-ugradient text-slate-900 pt-8"
+    class="z-10 border-t lg:border-gray-900/10 dark:border-green-400/[0.4] bg-ugradient text-slate-900 pt-8"
   >
     <section class="max-w-8xl mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
