@@ -47,11 +47,13 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 grid-flow-row auto-rows-max mb-4 mt-4 w-full mb-16"
       >
         <PartnerCard
-          v-for="partner in gold"
+          v-for="(partner, i) in gold"
           :key="partner.name"
           :badge-class="logoClassGold"
           :name="partner.name"
           :logo="partner.logo"
+          data-aos="flip-right"
+          :data-aos-delay="i * 100"
         >
         </PartnerCard>
       </div>
@@ -68,11 +70,13 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 grid-flow-row auto-rows-max mt-4 w-full mb-16"
       >
         <PartnerCard
-          v-for="partner in silver"
+          v-for="(partner, i) in silver"
           :key="partner.name"
           :badge-class="logoClass"
           :name="partner.name"
           :logo="partner.logo"
+          data-aos="flip-right"
+          :data-aos-delay="i * 100"
         >
         </PartnerCard>
       </div>
@@ -93,11 +97,13 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 grid-flow-row mt-4 w-full mb-16"
       >
         <PartnerCard
-          v-for="partner in bronze"
+          v-for="(partner, i) in bronze"
           :key="partner.name"
           :badge-class="logoClass3"
           :name="partner.name"
           :logo="partner.logo"
+          data-aos="flip-right"
+          :data-aos-delay="i * 100"
         >
         </PartnerCard>
       </div>
@@ -118,11 +124,13 @@ const logoClassMedia = 'bg-green-100 h-24 max-h-24 '
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 grid-flow-row auto-rows-max mt-4 w-full mb-16"
       >
         <PartnerCard
-          v-for="partner in media"
+          v-for="(partner, i) in media"
           :key="partner.name"
           :badge-class="logoClassMedia"
           :name="partner.name"
           :logo="partner.logo"
+          data-aos="flip-right"
+          :data-aos-delay="i * 100"
         >
         </PartnerCard>
       </div>
