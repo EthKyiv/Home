@@ -29,12 +29,50 @@
         </kinesis-element>
 
         <kinesis-element
-          :strength="20"
+          :strength="-20"
+          type="depth"
+          class="fixed top-1/2 right-1/2 invisible dark:lg:visible"
+        >
+          <div
+            class="dark:text-slate-900 transform translate-x-18 translate-y-20 -rotate-20 linear-wipe"
+            style=""
+          >
+            <IconGameIcons-all-seeing-eye class="text-8xl" />
+          </div>
+        </kinesis-element>
+        <kinesis-element
+          :strength="-50"
+          class="fixed top-2/3 right-1/3 invisible dark:lg:visible"
+        >
+          <div
+            class="dark:text-slate-900 transform translate-x-18 translate-y-10 rotate-80 linear-wipe"
+            style=""
+          >
+            <IconGameIcons-pentagram-rose
+              class="text-6xl mix-blend-difference"
+            />
+          </div>
+        </kinesis-element>
+
+        <kinesis-element
+          :strength="50"
+          class="fixed top-2/3 right-1/2 invisible dark:lg:visible"
+        >
+          <div
+            class="dark:text-slate-900 transform translate-x-18 rotate-20 linear-wipe"
+            style=""
+          >
+            <IconGameIcons-planet-conquest class="text-15xl" />
+          </div>
+        </kinesis-element>
+
+        <kinesis-element
+          :strength="40"
           type="depth"
           class="fixed bottom-1/2 left-0 invisible lg:visible"
         >
           <div
-            class="dark:text-black transform translate-x-18 -rotate-20 linear-wipe"
+            class="dark:text-slate-900 transform translate-x-18 -rotate-20 linear-wipe"
             style=""
           >
             <BrandLogoDimond :width="250" :height="250"></BrandLogoDimond>
@@ -44,13 +82,13 @@
         <kinesis-element
           :strength="-20"
           type="depth"
-          class="fixed bottom-1/3 right-70 invisible lg:visible"
+          class="fixed bottom-50 right-1/3 invisible dark:lg:visible"
         >
           <div
-            class="dark:text-black transform translate-x-18 rotate-320 linear-wipe"
+            class="dark:text-slate-900 transform translate-x-90 -translate-y-20 linear-wipe"
             style=""
           >
-            <BrandFlowerSm :width="180" :height="180"></BrandFlowerSm>
+            <IconArcticons:flutterhole class="text-10xl" />
           </div>
         </kinesis-element>
 
@@ -60,7 +98,7 @@
           class="fixed bottom-30 left-0 invisible lg:visible"
         >
           <div
-            class="text-black transform translate-x-18 rotate-20 linear-wipe"
+            class="dark:text-slate-900 transform translate-x-18 rotate-20 linear-wipe"
             style=""
           >
             <BrandFlowerSm :width="180" :height="180"></BrandFlowerSm>
