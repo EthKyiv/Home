@@ -109,8 +109,16 @@ footer {
 
 }
 
+.speaker-grid {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+
+}
 .card-speaker {
   transition: all 0.2s ease-in-out;
+  width: 245px;
+  .card-speaker-img {
+    
+  }
   &:hover {
     @extend .drop-shadow-dec;
 

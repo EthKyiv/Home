@@ -18,6 +18,7 @@ const app = useAppConfig() as AppConfigInput
         color="bg-green-400"
         button-title="Apply"
         :link="{ to: '/hackathon', title: 'Apply to hack' }"
+        data-aos="fade-up"
       ></Tickets>
       <Tickets
         title="online"
@@ -30,6 +31,8 @@ Become a Virtual Attendee!!"
         ]"
         price="TBA"
         color="bg-blue-500"
+        data-aos="fade-up"
+        data-aos-delay="50"
       ></Tickets>
       <Tickets
         featured
@@ -42,6 +45,8 @@ Become a Virtual Attendee!!"
         ]"
         price="TBA"
         color="bg-yellow-500"
+        data-aos="fade-up"
+        data-aos-delay="100"
       ></Tickets>
     </div>
   </PageSection>

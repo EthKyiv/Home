@@ -21,21 +21,39 @@ const toggle = () => {
 </script>
 
 <template>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4">
+  <div
+    class="faq-grid grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8 mt-4"
+  >
     <template v-if="data && data.length > 0">
-      <FAQEntery v-for="question in data" :key="question.slug" :data="question">
+      <FAQEntery
+        v-for="(question, i) in data"
+        :key="question.slug"
+        :data="question"
+        data-aos-disable="mobile"
+        data-aos-duration="200"
+        data-aos="fade-left"
+        :data-aos-offset="i * -70"
+        :data-aos-delay="i * 50"
+      >
       </FAQEntery>
     </template>
     <template v-if="all_faq && all_faq.length > 0">
       <div v-if="!show" class="col-span-2 flex items-center justify-end">
-        <Button size="sm" type="secondary" @click="toggle">show more FAQ ( {{ all_faq.length }} )</Button>
+        <Button size="sm" type="secondary" @click="toggle"
+          >show more FAQ ( {{ all_faq.length }} )</Button
+        >
       </div>
 
       <template v-if="show">
         <FAQEntery
-          v-for="question in all_faq"
+          v-for="(question, i) in all_faq"
           :key="question.slug"
           :data="question"
+          data-aos-disable="mobile"
+          data-aos-duration="200"
+          data-aos="fade-left"
+          :data-aos-offset="i * -70"
+          :data-aos-delay="i * 50"
         >
         </FAQEntery>
       </template>

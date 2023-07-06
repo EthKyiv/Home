@@ -152,12 +152,12 @@ definePageMeta({
         class="flex-1 flex flex-col items-start justify-center mt-10 py-5"
       >
         <ContentQuery v-slot="{ data }" path="page/section/dayzero" find="one">
-          <h2 class="section-title">
+          <h2 class="section-title" data-aos="fade-up">
             {{ data.title }}
           </h2>
 
           <div class="mt-10 ml-auto grid md:grid-cols-2 gap-4 md:gap-16">
-            <div class="">
+            <div data-aos="fade-up">
               <ContentRenderer
                 :value="data"
                 class="prose leading-tight text-gray-800 dark:text-slate-300 max-w-none"
@@ -165,7 +165,11 @@ definePageMeta({
                 <template #empty></template>
               </ContentRenderer>
             </div>
-            <div class="bg-gray-100 aspect-video">
+            <div
+              class="bg-gray-100 aspect-video"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <NuxtLink
                 title="official video"
                 :to="data.video"
