@@ -29,7 +29,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: '/assets/social-card.png',
+      content: '/assets/card.png',
     },
     {
       property: 'og:type',
@@ -37,7 +37,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/assets/social-card.png',
+      content: '/assets/card.png',
     },
     {
       name: 'theme-color',
