@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
-// state
+import LiteYouTubeEmbed from 'vue-lite-youtube-embed'
+import 'vue-lite-youtube-embed/style.css'
 const app = useAppConfig() as AppConfigInput
+const iframe = ref(null)
 // data
-
 const { data: card } = await useAsyncData('home_partials', () =>
   queryContent('/page/home')
     .where({ _partial: true, type: { $eq: 'card' } })
@@ -13,6 +14,15 @@ const { data: card } = await useAsyncData('home_partials', () =>
 // meta
 definePageMeta({
   layout: 'page-front',
+})
+
+onMounted(() => {
+  window.setTimeout(() => {
+    if (iframe && iframe.value) {
+      iframe.value.warmConnections()
+      iframe.value.addIframe()
+    }
+  }, 4000)
 })
 </script>
 
@@ -149,15 +159,20 @@ definePageMeta({
 
       <PageSection
         id="about"
-        class="flex-1 flex flex-col items-start justify-center mt-10 py-5 "
+        class="flex-1 flex flex-col items-start justify-center mt-10 py-5"
       >
         <ContentQuery v-slot="{ data }" path="page/section/dayzero" find="one">
           <h2 class="section-title" data-aos="fade-up">
             {{ data.title }}
           </h2>
 
-          <div class="mt-10 ml-auto grid md:grid-cols-6 lg:grid-cols-2 gap-4 md:gap-16">
-            <div class="md:col-span-5 lg:col-span-1 mb-10 md:mb-0" data-aos="fade-up" >
+          <div
+            class="mt-10 ml-auto grid md:grid-cols-6 lg:grid-cols-2 gap-4 md:gap-16"
+          >
+            <div
+              class="md:col-span-5 lg:col-span-1 mb-10 md:mb-0"
+              data-aos="fade-up"
+            >
               <ContentRenderer
                 :value="data"
                 class="prose leading-tight text-gray-800 dark:text-slate-300 max-w-none bg-white/[0.8]"
@@ -166,24 +181,21 @@ definePageMeta({
               </ContentRenderer>
             </div>
             <div
-            class="md:col-span-5 lg:col-span-1" 
+              class="md:col-span-5 lg:col-span-1"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <NuxtLink
-                title="official video"
-                :to="data.video"
-                target="_blank"
-                no-rel
-              >
-                <nuxt-img
-                  :src="data.video_cover"
-                  alt="cover img video"
-                  format="webp"
-                  width="650"
-                  height="407"
-                />
-              </NuxtLink>
+              <LiteYouTubeEmbed
+                :id="data.video"
+                ref="iframe"
+                :thumbnail="data.video_cover"
+                muted
+                params="modestbranding&rel=0"
+                title="Day Zero announcement event of ETHKyiv"
+              />
+              <!-- <NuxtLink title="official video" :to="data.video" target="_blank" no-rel>
+                <nuxt-img :src="data.video_cover" alt="cover img video" format="webp" width="650" height="407" />
+              </NuxtLink> -->
             </div>
           </div>
         </ContentQuery>

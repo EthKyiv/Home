@@ -1,6 +1,6 @@
 ---
 title: "From DayZERO to DayONE"
-video: "https://www.youtube.com/watch?v=ATAthUup3TA"
+video: "ATAthUup3TA"
 video_cover: "/img/videocover_img.png"
 ---
 <!-- :app-link{to="hacker_manual"}[Hackers Guide] -->

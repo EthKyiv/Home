@@ -1,7 +1,7 @@
 import { useTheme } from '~/stores/theme'
 export default defineNuxtRouteMiddleware((route) => {
   const theme = useTheme()
-  if (route == undefined) {
+  if (route === undefined) {
     theme.lightTheme()
     return
   }
