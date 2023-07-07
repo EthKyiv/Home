@@ -1,5 +1,5 @@
 ---
-title: Hackathon ETHKyiv 15 - 17 Sep 2023
+title: Hackathon ETHKyiv Coming Soon
 subtitle: "Ukrains top community-driven Ethereum event" #used in header subtitle
 date: "Coming Soon"
 #SEO settings

@@ -13,11 +13,6 @@ const show = ref(false)
 const toggle = () => {
   show.value = !show.value
 }
-
-// lifecycle
-// onMounted(() => {
-//   setTimeout(() => (show.value = true), 100)
-// })
 </script>
 
 <template>
