@@ -78,7 +78,8 @@ defineProps({
 
           <div
             v-if="keynote"
-            title="Keynote"
+            v-tippy="`Keynote speaker`"
+            aria-label="Keynote speaker"
             class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded-full drop-shadow-button"
           >
             <IconPh:microphone-stage-fill />
@@ -86,7 +87,8 @@ defineProps({
 
           <div
             v-if="panel"
-            title="Panel"
+            v-tippy="`Panel participant`"
+            aria-label="Panel participant"
             class="ease-in duration-300 transform bg-green-400 hover:bg-green-500 h-6 w-6 flex justify-center items-center text-gray-900 border border-1 border-gray-900 rounded-full drop-shadow-button"
           >
             <IconHealthicons:group-discussion-meetingx3 />

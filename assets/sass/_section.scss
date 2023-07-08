@@ -168,3 +168,29 @@ footer {
 .prose strong {
   color: inherit;
 }
+
+
+.tippy-box[data-theme~='neo'] {
+  background-color: theme('colors.green.200');
+  color: theme('colors.slate.800');
+  border: 2px solid theme('colors.slate.800');
+  box-shadow: 2px 3px 0px 0px theme('colors.slate.800');
+  font-weight: 700;
+  padding:0.5rem
+}
+.tippy-box[data-theme~='neo'] {
+&.tippy-box[data-placement^=top]>.tippy-arrow {
+  bottom: -5px
+}
+.tippy-arrow {
+ 
+  color: theme('colors.slate.800') 
+}
+
+// .tippy-arrow:before {
+//   content: "";
+//   position: absolute;
+//   border-color: transparent;
+//   border-style: solid
+// }
+}

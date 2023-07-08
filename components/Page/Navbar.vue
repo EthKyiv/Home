@@ -149,6 +149,12 @@ const dynamicButton = computed((): IMenuItem => {
     <template #app-after-options="{ toggleOptions, show }">
       <div class="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 z-100">
         <Button
+          v-tippy="{
+            content: `<img class='mx-2 mt-2 w-30 border-2 border-black' src='/assets/cat-cat-vibing.gif'/><br><span class='text-xs mx-2'> server livestream</span>`,
+            allowHTML: true,
+            arrow: true,
+            placement: 'top',
+          }"
           text="Join us on Discord"
           type="secondary"
           size="sm"
