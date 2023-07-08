@@ -51,7 +51,7 @@ defineProps({
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-96 opacity-0"
     >
-      <DisclosurePanel as="dd" class="text-base pr-6 ml-0" :unmount="false" >
+      <DisclosurePanel as="dd" class="text-base pr-6 ml-0" :unmount="false">
         <ContentRenderer
           :value="data"
           class="prose max-w-none text-gray-800 dark:text-slate-400 prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600"

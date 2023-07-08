@@ -34,7 +34,7 @@ const toggle = () => {
     </template>
     <template v-if="all_faq && all_faq.length > 0">
       <div v-if="!show" class="col-span-2 flex items-center justify-end">
-        <Button size="sm" type="secondary" title="see more" @click="toggle" >
+        <Button size="sm" type="secondary" title="see more" @click="toggle">
           <IconEl:plus />
           <span class="font-bold ml-2">{{ all_faq.length }} FAQ</span>
         </Button>

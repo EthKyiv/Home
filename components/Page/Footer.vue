@@ -45,9 +45,15 @@ const app = useAppConfig() as AppConfigInput
               <Anchor class="hover:no-underline hover:opacity-75" to="/media">
                 Media Page
               </Anchor>
-              <a class="pointer-events-none	opacity-50" disabled> Privacy Policy </a>
-              <a class="pointer-events-none	opacity-50" disabled> Terms &amp; Conditions </a>
-              <a class="pointer-events-none	opacity-50" disabled> Accessibility </a>
+              <a class="pointer-events-none opacity-50" disabled>
+                Privacy Policy
+              </a>
+              <a class="pointer-events-none opacity-50" disabled>
+                Terms &amp; Conditions
+              </a>
+              <a class="pointer-events-none opacity-50" disabled>
+                Accessibility
+              </a>
             </nav>
           </div>
           <div class="">
@@ -93,9 +99,13 @@ const app = useAppConfig() as AppConfigInput
           <div class="">
             <p class="font-bold">Helpful Links</p>
             <nav class="flex flex-col mt-2 space-y-2 text-sm text-gray-500">
-              <a class="pointer-events-none	opacity-50" disabled > Contact </a>
-              <a class="pointer-events-none	opacity-50" disabled> Hacker Manual </a>
-              <a class="pointer-events-none	opacity-50" disabled> Sponsor Manual </a>
+              <a class="pointer-events-none opacity-50" disabled> Contact </a>
+              <a class="pointer-events-none opacity-50" disabled>
+                Hacker Manual
+              </a>
+              <a class="pointer-events-none opacity-50" disabled>
+                Sponsor Manual
+              </a>
             </nav>
           </div>
         </div>
